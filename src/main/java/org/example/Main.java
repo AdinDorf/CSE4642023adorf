@@ -1,9 +1,24 @@
 package org.example;
 
+import guru.nidi.graphviz.attribute.Font;
+import guru.nidi.graphviz.attribute.Rank;
+import guru.nidi.graphviz.engine.Format;
+import guru.nidi.graphviz.engine.Graphviz;
+import guru.nidi.graphviz.model.Graph;
+import guru.nidi.graphviz.model.MutableGraph;
+import guru.nidi.graphviz.parse.Parser;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
+import static guru.nidi.graphviz.attribute.Rank.RankDir.LEFT_TO_RIGHT;
+import static guru.nidi.graphviz.model.Factory.graph;
+
 public class Main {
     public static void main(String[] args)
     {
-        System.out.print("The first arg is: " + args[1]);
+        System.out.print("The first arg is: " + args[0]);
         switch(args[0]) {
             case "dot":
 
@@ -15,9 +30,8 @@ public class Main {
                 // nodes and the edge direction of edges (e.g., a -> b)
                 // API for printing a graph: toString()
                 // API for output to file: outputGraph(String filepath)
-
-
-
+                String path = args[1];
+                parseGraph(path);
                 break;
 
         }
@@ -26,13 +40,21 @@ public class Main {
     }
 
 
-    public static void parseGraph(String content)
+    public static void parseGraph(String inputPath)
     {
-        Graph g = graph("newGraph").directed()
-                .graphAttr().with(Rank.dir(LEFT_TO_RIGHT))
-                .nodeAttr().with(Font.name("arial"))
-                .linkAttr().with("class", "link-class");
 
+        try {
+            InputStream dot = new FileInputStream(inputPath);
+
+            MutableGraph g = new Parser().read(dot);
+
+            Graphviz.fromGraph(g).width(700).render(Format.PNG).toFile(new File("example/ex2.png"));
+        }
+        catch (Exception e)
+        {
+            System.out.println("Failed to read input graph");
+            e.getStackTrace();
+        }
 
     }
 
