@@ -12,6 +12,7 @@ import javax.swing.plaf.multi.MultiTabbedPaneUI;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.Scanner;
 
 
@@ -36,18 +37,16 @@ public class Main {
             switch(input) {
                 case "dot":
 
-                    //TODO: Output the number of nodes, the label of the nodes, the number of edges, the
-                    // nodes and the edge direction of edges (e.g., a -> b)
-                    // API for printing a graph: toString88()
+
                     // API for output to file: outputGraph(String filepath)
-                    System.out.println("Enter a path: \n");
+                    System.out.println("Enter a path: ");
                     String path = scan.nextLine();
                     g = parseGraph(path);
                     break;
 
 
                 case "tostring":
-                    System.out.println("Graph ToString: \n" + g.toString());
+                    graphToString(g);
                     break;
             }
 
@@ -67,6 +66,22 @@ public class Main {
         );
     }
 
+    public static void graphToString(MutableGraph g)
+    {
+        //TODO: Output the number of nodes, the label of the nodes, the number of edges, the
+        // nodes and the edge direction of edges (e.g., a -> b)
+        // API for printing a graph: toString88()
+        System.out.println("Number of Nodes: "+ g.nodes().size());
+        System.out.println("Node Labels: "+ g.nodes().toString());
+
+        System.out.println("Number of Edges: "+ g.edges().size());
+
+        for (var i : g.edges())
+        {
+            System.out.println(i.name());
+        }
+
+    }
     public static MutableGraph parseGraph(String inputPath)
     {
         //TODO: Feature 1: Parse a DOT graph file to create a graph (20 points)
