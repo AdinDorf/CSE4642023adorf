@@ -62,7 +62,7 @@ public class Main {
                 "\n**********************************************************\n" +
                         "Please enter one of the following commands\n" +
                         "dot: parses a dot graph given a path\n" +
-                        "tostring: Outputs a dot graph if there is one currently in memory\n"
+                        "tostring: Outputs a dot graph if there is one currently in memory: "
         );
     }
 
@@ -75,7 +75,7 @@ public class Main {
         System.out.println("Node Labels: "+ g.nodes().toString());
 
         System.out.println("Number of Edges: "+ g.edges().size());
-
+        System.out.println("Edge names: ");
         for (var i : g.edges())
         {
             System.out.println(i.name());
