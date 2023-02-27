@@ -6,23 +6,24 @@ import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
 import guru.nidi.graphviz.model.Graph;
 import guru.nidi.graphviz.model.MutableGraph;
+import guru.nidi.graphviz.model.MutableNode;
+import guru.nidi.graphviz.model.Node;
 import guru.nidi.graphviz.parse.Parser;
 
 import javax.swing.plaf.multi.MultiTabbedPaneUI;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Collection;
 import java.util.Scanner;
 
 
 import static guru.nidi.graphviz.attribute.Rank.RankDir.LEFT_TO_RIGHT;
-import static guru.nidi.graphviz.model.Factory.graph;
+import static guru.nidi.graphviz.model.Factory.*;
 
 public class Main {
+    public static MutableGraph g = null;
     public static void main(String[] args)
     {
-        MutableGraph g = null;
+
         Scanner scan = new Scanner(System.in);
         printMenu();
         String input = input = scan.nextLine();
@@ -36,17 +37,35 @@ public class Main {
 
             switch(input) {
                 case "dot":
-
-
                     // API for output to file: outputGraph(String filepath)
                     System.out.println("Enter a path: ");
-                    String path = scan.nextLine();
-                    g = parseGraph(path);
-                    break;
+                    input = scan.nextLine();
+                    g = parseGraph(input);
 
+                    graphToString(g);
+                    break;
 
                 case "tostring":
                     graphToString(g);
+                    break;
+
+                case "outputGraph":
+                    //outputGraph(file);
+                    break;
+                case "toPNG":
+                    System.out.println("Enter a name for the PNG. It will be saved to ./example/[name].png: ");
+                    input = scan.nextLine();
+                    exportToPNG(g,input);
+                    break;
+                case "addNode":
+                    System.out.println("Enter a name for the new node");
+                    input = scan.nextLine();
+                    addNode(g,input);
+                    break;
+                case "removeNode":
+                    System.out.println("Enter which node should be removed");
+                    input = scan.nextLine();
+                    removeNode(g,input);
                     break;
             }
 
@@ -62,7 +81,9 @@ public class Main {
                 "\n**********************************************************\n" +
                         "Please enter one of the following commands\n" +
                         "dot: parses a dot graph given a path\n" +
-                        "tostring: Outputs a dot graph if there is one currently in memory: "
+                        "tostring: Outputs a dot graph if there is one currently in memory\n" +
+                        "toPNG: Exports the current DOT graph to a PNG\n" +
+                        "addNode: adds a node \n"
         );
     }
 
@@ -70,17 +91,18 @@ public class Main {
     {
         //TODO: Output the number of nodes, the label of the nodes, the number of edges, the
         // nodes and the edge direction of edges (e.g., a -> b)
-        // API for printing a graph: toString88()
-        System.out.println("Number of Nodes: "+ g.nodes().size());
-        System.out.println("Node Labels: "+ g.nodes().toString());
+        // API for printing a graph: toString()
+        String s = "";
 
-        System.out.println("Number of Edges: "+ g.edges().size());
-        System.out.println("Edge names: ");
+        s += "Number of Nodes: "+ g.nodes().size() + "\n";
+        s += "Node Labels: "+ g.nodes().toString() + "\n";
+        s += "Number of Edges: "+ g.edges().size() + "\n";
         for (var i : g.edges())
         {
-            System.out.println(i.name());
+            s += i.name() + "\n";
         }
 
+        System.out.println("Graph: \n" + s);
     }
     public static MutableGraph parseGraph(String inputPath)
     {
@@ -98,12 +120,12 @@ public class Main {
         {
             System.out.println("Failed to read input graph");
             e.getStackTrace();
-
+            e.printStackTrace();
             return null;
         }
     }
 
-    public static void printToPNG(Graph g, String name) {
+    public static void exportToPNG(MutableGraph g, String name) {
         try {
             System.out.println("Exported graph " + name + " to png: ");
             Graphviz.fromGraph(g).width(700).render(Format.PNG).toFile(new File("example/"+name+".png"));
@@ -116,5 +138,55 @@ public class Main {
     }
 
 
+    public static void outputGraph(String filepath)
+    {
+        //output the contents of g into a text file
+        try {
+            FileWriter fw = new FileWriter(filepath);
+            fw.write("hello");
+            fw.close();
+            System.out.println("Printed toString to file at: " + filepath);
+        }
+        catch (IOException e) {
+            System.out.println("Error writing to file");
+            e.printStackTrace();
+        }
+    }
+
+    public static void addNode(MutableGraph g, String name)
+    {
+        for (var i : g.nodes())
+        {
+            if(name.equals(i.name().toString()))
+            {
+                System.out.println("Node " + name + " already exists!");
+                return;
+            }
+        }
+        System.out.println("Successfully added node: " + name);
+        g = g.add(mutNode(name));
+
+
+    }
+
+    public static void removeNode(MutableGraph g, String name)
+    {
+        boolean found = false;
+        for (var i : g.nodes())
+        {
+            if(name.equals(i.name().toString())) {
+                System.out.println("Before: " + g.nodes().toString());
+                mutGraph(g.name().toString()).nodes().remove(i);
+
+                System.out.println("After: " + g.nodes().toString());
+                found = true;
+                System.out.println("Successfully removed node: " + name);
+            }
+        }
+        if(found == false)
+        {
+            System.out.println("Node " + name + " doesn't exist!");
+        }
+    }
 
 }
