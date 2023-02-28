@@ -83,7 +83,8 @@ public class Main {
                         "dot: parses a dot graph given a path\n" +
                         "tostring: Outputs a dot graph if there is one currently in memory\n" +
                         "toPNG: Exports the current DOT graph to a PNG\n" +
-                        "addNode: adds a node \n"
+                        "addNode: add a node \n" +
+                        "removeNode: remove a node"
         );
     }
 
@@ -113,7 +114,9 @@ public class Main {
 
         try {
             InputStream dot = new FileInputStream(inputPath);
-            MutableGraph g = new Parser().read(dot);
+            MyGraph g = new MyGraph(new Parser().read(dot));
+
+
             return g;
         }
         catch (Exception e)
