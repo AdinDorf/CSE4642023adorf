@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Added Add Node, cleaned up code">
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Extended Mutable Graph with my own class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b5b4dd9c-b032-4b25-8ed4-0c3351ffaadf" />
+        <option name="url" value="https://github.com/AdinDorf/CSE464adorf" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -121,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677477633952</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Extended Mutable Graph with my own class">
+      <created>1677564393820</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677564393820</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,7 +164,8 @@
     <MESSAGE value="Added tostring" />
     <MESSAGE value="Cleaned up output" />
     <MESSAGE value="Added Add Node, cleaned up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Add Node, cleaned up code" />
+    <MESSAGE value="Extended Mutable Graph with my own class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extended Mutable Graph with my own class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

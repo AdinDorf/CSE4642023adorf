@@ -20,7 +20,7 @@ import static guru.nidi.graphviz.attribute.Rank.RankDir.LEFT_TO_RIGHT;
 import static guru.nidi.graphviz.model.Factory.*;
 
 public class Main {
-    public static MutableGraph g = null;
+    public static MyGraph g = null;
     public static void main(String[] args)
     {
 
@@ -88,7 +88,7 @@ public class Main {
         );
     }
 
-    public static void graphToString(MutableGraph g)
+    public static void graphToString(MyGraph g)
     {
         //TODO: Output the number of nodes, the label of the nodes, the number of edges, the
         // nodes and the edge direction of edges (e.g., a -> b)
@@ -105,7 +105,7 @@ public class Main {
 
         System.out.println("Graph: \n" + s);
     }
-    public static MutableGraph parseGraph(String inputPath)
+    public static MyGraph parseGraph(String inputPath)
     {
         //TODO: Feature 1: Parse a DOT graph file to create a graph (20 points)
         // Accept a DOT graph file and create a directed graph object (define your own
@@ -115,7 +115,6 @@ public class Main {
         try {
             InputStream dot = new FileInputStream(inputPath);
             MyGraph g = new MyGraph(new Parser().read(dot));
-
 
             return g;
         }
@@ -128,7 +127,7 @@ public class Main {
         }
     }
 
-    public static void exportToPNG(MutableGraph g, String name) {
+    public static void exportToPNG(MyGraph g, String name) {
         try {
             System.out.println("Exported graph " + name + " to png: ");
             Graphviz.fromGraph(g).width(700).render(Format.PNG).toFile(new File("example/"+name+".png"));
@@ -156,7 +155,7 @@ public class Main {
         }
     }
 
-    public static void addNode(MutableGraph g, String name)
+    public static void addNode(MyGraph g, String name)
     {
         for (var i : g.nodes())
         {
@@ -167,19 +166,20 @@ public class Main {
             }
         }
         System.out.println("Successfully added node: " + name);
-        g = g.add(mutNode(name));
+        g = (MyGraph)g.add(mutNode(name));
 
 
     }
 
-    public static void removeNode(MutableGraph g, String name)
+    public static void removeNode(MyGraph g, String name)
     {
         boolean found = false;
         for (var i : g.nodes())
         {
             if(name.equals(i.name().toString())) {
                 System.out.println("Before: " + g.nodes().toString());
-                mutGraph(g.name().toString()).nodes().remove(i);
+
+                g.remove(i);
 
                 System.out.println("After: " + g.nodes().toString());
                 found = true;

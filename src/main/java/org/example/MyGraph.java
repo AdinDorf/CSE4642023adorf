@@ -13,4 +13,9 @@ public class MyGraph extends MutableGraph {
     {
         super(g.isStrict(), g.isDirected(), g.isCluster(), g.name(), (LinkedHashSet<MutableNode>)g.rootNodes(), (LinkedHashSet<MutableGraph>)g.graphs(), g.links(), g.nodeAttrs(), g.linkAttrs(), g.graphAttrs());
     }
+
+    public MyGraph remove(LinkSource source){
+        nodes.remove(source);
+        return this;
+    }
 }
