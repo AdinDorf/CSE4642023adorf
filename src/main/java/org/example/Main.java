@@ -1,22 +1,11 @@
 package org.example;
 
-import guru.nidi.graphviz.attribute.Font;
-import guru.nidi.graphviz.attribute.Rank;
+
 import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
-import guru.nidi.graphviz.model.Graph;
-import guru.nidi.graphviz.model.MutableGraph;
-import guru.nidi.graphviz.model.MutableNode;
-import guru.nidi.graphviz.model.Node;
 import guru.nidi.graphviz.parse.Parser;
-
-import javax.swing.plaf.multi.MultiTabbedPaneUI;
 import java.io.*;
-import java.util.Collection;
 import java.util.Scanner;
-
-
-import static guru.nidi.graphviz.attribute.Rank.RankDir.LEFT_TO_RIGHT;
 import static guru.nidi.graphviz.model.Factory.*;
 
 public class Main {
@@ -26,14 +15,10 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         printMenu();
-        String input = input = scan.nextLine();
+        String input = scan.nextLine();
 
-        while (input != "exit")
+        while (!input.equals("exit"))
         {
-            if (input == "exit")
-            {
-                return;
-            }
 
             switch(input) {
                 case "dot":
@@ -78,13 +63,15 @@ public class Main {
     {
 
         System.out.println(
-                "\n**********************************************************\n" +
-                        "Please enter one of the following commands\n" +
-                        "dot: parses a dot graph given a path\n" +
-                        "tostring: Outputs a dot graph if there is one currently in memory\n" +
-                        "toPNG: Exports the current DOT graph to a PNG\n" +
-                        "addNode: add a node \n" +
-                        "removeNode: remove a node"
+                """
+                        **********************************************************
+                        Please enter one of the following commands
+                        dot: parses a dot graph given a path
+                        tostring: Outputs a dot graph if there is one currently in memory
+                        toPNG: Exports the current DOT graph to a PNG
+                        addNode: add a node
+                        removeNode: remove a node
+                        """
         );
     }
 
@@ -93,16 +80,15 @@ public class Main {
         //TODO: Output the number of nodes, the label of the nodes, the number of edges, the
         // nodes and the edge direction of edges (e.g., a -> b)
         // API for printing a graph: toString()
-        String s = "";
+        StringBuilder s = new StringBuilder();
 
-        s += "Number of Nodes: "+ g.nodes().size() + "\n";
-        s += "Node Labels: "+ g.nodes().toString() + "\n";
-        s += "Number of Edges: "+ g.edges().size() + "\n";
+        s.append("Number of Nodes: ").append(g.nodes().size()).append("\n");
+        s.append("Node Labels: ").append(g.nodes()).append("\n");
+        s.append("Number of Edges: ").append(g.edges().size()).append("\n");
         for (var i : g.edges())
         {
-            s += i.name() + "\n";
+            s.append(i.name()).append("\n");
         }
-
         System.out.println("Graph: \n" + s);
     }
     public static MyGraph parseGraph(String inputPath)
@@ -114,9 +100,7 @@ public class Main {
 
         try {
             InputStream dot = new FileInputStream(inputPath);
-            MyGraph g = new MyGraph(new Parser().read(dot));
-
-            return g;
+            return new MyGraph(new Parser().read(dot));
         }
         catch (Exception e)
         {
@@ -139,22 +123,22 @@ public class Main {
         }
     }
 
-
-    public static void outputGraph(String filepath)
-    {
-        //output the contents of g into a text file
-        try {
-            FileWriter fw = new FileWriter(filepath);
-            fw.write("hello");
-            fw.close();
-            System.out.println("Printed toString to file at: " + filepath);
+    /*
+        public static void outputGraph(String filepath)
+        {
+            //output the contents of g into a text file
+            try {
+                FileWriter fw = new FileWriter(filepath);
+                fw.write("hello");
+                fw.close();
+                System.out.println("Printed toString to file at: " + filepath);
+            }
+            catch (IOException e) {
+                System.out.println("Error writing to file");
+                e.printStackTrace();
+            }
         }
-        catch (IOException e) {
-            System.out.println("Error writing to file");
-            e.printStackTrace();
-        }
-    }
-
+    */
     public static void addNode(MyGraph g, String name)
     {
         for (var i : g.nodes())
@@ -166,8 +150,7 @@ public class Main {
             }
         }
         System.out.println("Successfully added node: " + name);
-        g = (MyGraph)g.add(mutNode(name));
-
+        g.add(mutNode(name));
 
     }
 
@@ -177,16 +160,12 @@ public class Main {
         for (var i : g.nodes())
         {
             if(name.equals(i.name().toString())) {
-                System.out.println("Before: " + g.nodes().toString());
-
                 g.remove(i);
-
-                System.out.println("After: " + g.nodes().toString());
                 found = true;
                 System.out.println("Successfully removed node: " + name);
             }
         }
-        if(found == false)
+        if(!found)
         {
             System.out.println("Node " + name + " doesn't exist!");
         }
