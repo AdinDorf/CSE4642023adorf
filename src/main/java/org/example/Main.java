@@ -3,6 +3,8 @@ package org.example;
 
 import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
+import guru.nidi.graphviz.model.MutableGraph;
+import guru.nidi.graphviz.model.MutableNode;
 import guru.nidi.graphviz.parse.Parser;
 import java.io.*;
 import java.util.Scanner;
@@ -69,8 +71,10 @@ public class Main {
                         dot: parses a dot graph given a path
                         tostring: Outputs a dot graph if there is one currently in memory
                         toPNG: Exports the current DOT graph to a PNG
-                        addNode: add a node
-                        removeNode: remove a node
+                        addNode: add a node by name
+                        addNodes: add a list of nodes by name, delimited by commas
+                        removeNode: remove a node by name
+                        removeNodes: remove a list of nodes by name, delimited by commas
                         """
         );
     }
@@ -141,34 +145,77 @@ public class Main {
     */
     public static void addNode(MyGraph g, String name)
     {
-        for (var i : g.nodes())
+
+        String[] nameList;
+        nameList = name.split(",");
+
+        for (var st : nameList)
         {
-            if(name.equals(i.name().toString()))
+            st = st.strip();
+
+            //Check if a node already exists
+            for (var i : g.nodes())
             {
-                System.out.println("Node " + name + " already exists!");
-                return;
+                if(name.equals(i.name().toString()))
+                {
+                    System.out.println("Node " + name + " already exists!");
+
+                }
             }
         }
+
+
         System.out.println("Successfully added node: " + name);
         g.add(mutNode(name));
-
     }
 
     public static void removeNode(MyGraph g, String name)
+    {
+        MutableNode n = findNode(name);
+        if (n != null)
+        {
+            g.remove(n);
+            System.out.println("Successfully removed node: " + name);
+        }
+        else
+        {
+            System.out.println("Node " + name + " doesn't exist!");
+        }
+    }
+
+    /*Add an edge and check of duplicate edges: addEdge(String srcLabel,
+String dstLabel)
+• Remove an edge: removeEdge(String srcLabel, String dstLabel)*/
+    public static void addEdge(String srcLabel, String dstLabel)
+    {
+        MutableNode srcNode = findNode(srcLabel);
+        MutableNode dstNode = findNode(dstLabel);
+
+        if (srcNode == null || dstNode == null)
+        {
+            System.out.println("One or both of the input nodes were not found");
+            return;
+        }
+
+        g.addLink(srcNode, dstNode);
+        System.out.println("Edge added between "+ srcLabel+ " and " + dstLabel);
+    }
+
+
+    private static MutableNode findNode(String name)
     {
         boolean found = false;
         for (var i : g.nodes())
         {
             if(name.equals(i.name().toString())) {
-                g.remove(i);
-                found = true;
-                System.out.println("Successfully removed node: " + name);
+                return i;
             }
         }
         if(!found)
         {
             System.out.println("Node " + name + " doesn't exist!");
         }
+        return null;
     }
 
 }
