@@ -146,27 +146,16 @@ public class Main {
     public static void addNode(MyGraph g, String name)
     {
 
-        String[] nameList;
-        nameList = name.split(",");
-
-        for (var st : nameList)
+        //Check if a node already exists
+        if(findNode(name)!= null)
         {
-            st = st.strip();
-
-            //Check if a node already exists
-            for (var i : g.nodes())
-            {
-                if(name.equals(i.name().toString()))
-                {
-                    System.out.println("Node " + name + " already exists!");
-
-                }
-            }
+            System.out.println("Node " + name + " doesn't exist!");
+            return;
         }
 
-
-        System.out.println("Successfully added node: " + name);
         g.add(mutNode(name));
+        System.out.println("Successfully added node: " + name);
+
     }
 
     public static void removeNode(MyGraph g, String name)
