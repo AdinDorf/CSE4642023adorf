@@ -54,6 +54,13 @@ public class Main {
                     input = scan.nextLine();
                     removeNode(g,input);
                     break;
+                case "addEdge":
+                    System.out.println("Enter which nodes to connect");
+                    input = scan.nextLine();
+                    var tempInput = input;
+                    input = scan.nextLine();
+                    addEdge(tempInput, input);
+                    break;
             }
 
             printMenu();
@@ -75,6 +82,7 @@ public class Main {
                         addNodes: add a list of nodes by name, delimited by commas
                         removeNode: remove a node by name
                         removeNodes: remove a list of nodes by name, delimited by commas
+                        addEdge: add an edge between two nodes
                         """
         );
     }
@@ -200,10 +208,7 @@ String dstLabel)
                 return i;
             }
         }
-        if(!found)
-        {
-            System.out.println("Node " + name + " doesn't exist!");
-        }
+
         return null;
     }
 
