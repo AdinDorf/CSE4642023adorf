@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Added findNode helper function&#10;Added addEdge">
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="cleaned printmenu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ex.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ex.dot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,11 @@
         <option name="url" value="https://github.com/AdinDorf/CSE464adorf" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="MainTest.testGraphToString" />
+    </enabled-run-configurations>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -78,7 +84,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest.testGraphToString">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="CSE464adorf" />
@@ -207,7 +213,28 @@
       <option name="project" value="LOCAL" />
       <updated>1677564393820</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added findNode helper function&#10;Added addEdge">
+      <created>1678943451977</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678943451977</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changed addNode to use findNode helper function">
+      <created>1678945596359</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678945596359</updated>
+    </task>
+    <task id="LOCAL-00010" summary="cleaned printmenu">
+      <created>1678946778957</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678946778957</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,7 +258,9 @@
     <MESSAGE value="Added Add Node, cleaned up code" />
     <MESSAGE value="Extended Mutable Graph with my own class" />
     <MESSAGE value="Added findNode helper function&#10;Added addEdge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added findNode helper function&#10;Added addEdge" />
+    <MESSAGE value="Changed addNode to use findNode helper function" />
+    <MESSAGE value="cleaned printmenu" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned printmenu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

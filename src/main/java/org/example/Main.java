@@ -3,7 +3,7 @@ package org.example;
 
 import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
-import guru.nidi.graphviz.model.MutableGraph;
+import guru.nidi.graphviz.model.Link;
 import guru.nidi.graphviz.model.MutableNode;
 import guru.nidi.graphviz.parse.Parser;
 import java.io.*;
@@ -28,7 +28,6 @@ public class Main {
                     System.out.println("Enter a path: ");
                     input = scan.nextLine();
                     g = parseGraph(input);
-
                     graphToString(g);
                     break;
 
@@ -171,7 +170,7 @@ public class Main {
         MutableNode n = findNode(name);
         if (n != null)
         {
-            g.remove(n);
+            g.removeNode(n);
             System.out.println("Successfully removed node: " + name);
         }
         else
@@ -194,10 +193,24 @@ String dstLabel)
             return;
         }
 
-        g.addLink(srcNode, dstNode);
+        g = g.addEdge(srcNode,dstNode);
+
         System.out.println("Edge added between "+ srcLabel+ " and " + dstLabel);
     }
 
+    public static void removeEdge(String srcLabel, String dstLabel)
+    {
+        MutableNode srcNode = findNode(srcLabel);
+        MutableNode dstNode = findNode(dstLabel);
+
+        if (srcNode == null && dstNode == null)
+        {
+            return;
+        }
+
+        //g.addEdge(srcNode, dstNode);
+        System.out.println("Edge added between "+ srcLabel+ " and " + dstLabel);
+    }
 
     private static MutableNode findNode(String name)
     {
