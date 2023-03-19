@@ -1,5 +1,7 @@
 package org.example;
 import guru.nidi.graphviz.model.*;
+
+import java.awt.*;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -21,9 +23,13 @@ public class MyGraph extends MutableGraph {
         return this;
     }
 
-    public MyGraph addEdge(MutableNode source, LinkTarget dest){
-        //source = source.linkTo(dest);
+    public MyGraph addEdge(MutableNode source, MutableNode dest){
+        System.out.print(source.links());
         source = source.addLink(dest);
+
+        var i = source.links().indexOf(dest.asLinkTarget());
+        //source.links().get(i).add(Color.red);
+        System.out.print(source.links());
         return this;
     }
 

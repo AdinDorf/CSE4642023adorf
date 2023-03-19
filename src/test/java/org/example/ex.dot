@@ -1,16 +1,11 @@
-digraph R {
+digraph D {
 
-  node [shape=record];
+A [shape=diamond]
+B [shape=box]
+C [shape=circle]
 
-  { rank=same rA sA tA }
-  { rank=same uB vB wB }
-
-
-   rA -> sA;
-   sA -> vB;
-   t  -> rA;
-   uB -> vB;
-   wB -> u;
-   wB -> tA;
+A -> B [style=dashed, color=gray]
+A -> C [color="black:invis:black"]
+A -> D [penwidth=5, arrowhead=none]
 
 }

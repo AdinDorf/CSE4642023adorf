@@ -3,7 +3,7 @@ package org.example;
 
 import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
-import guru.nidi.graphviz.model.Link;
+
 import guru.nidi.graphviz.model.MutableNode;
 import guru.nidi.graphviz.parse.Parser;
 import java.io.*;
@@ -208,7 +208,7 @@ String dstLabel)
             return;
         }
 
-        //g.addEdge(srcNode, dstNode);
+        g.removeEdge(srcNode, dstNode);
         System.out.println("Edge added between "+ srcLabel+ " and " + dstLabel);
     }
 
