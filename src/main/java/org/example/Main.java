@@ -60,6 +60,13 @@ public class Main {
                     input = scan.nextLine();
                     addEdge(tempInput, input);
                     break;
+                case "removeEdge":
+                    System.out.println("Enter which nodes to disconnect");
+                    input = scan.nextLine();
+                    var t = input;
+                    input = scan.nextLine();
+                    removeEdge(t, input);
+                    break;
             }
 
             printMenu();
@@ -82,6 +89,7 @@ public class Main {
                         removeNode: remove a node by name
                         removeNodes: remove a list of nodes by name, delimited by commas
                         addEdge: add an edge between two nodes
+                        removeEdge: remove an edge between two nodes
                         """
         );
     }
@@ -203,13 +211,14 @@ String dstLabel)
         MutableNode srcNode = findNode(srcLabel);
         MutableNode dstNode = findNode(dstLabel);
 
-        if (srcNode == null && dstNode == null)
+        if (srcNode == null || dstNode == null)
         {
+            System.out.println("Couldn't find " + srcLabel + " or " + dstLabel);
             return;
         }
 
         g.removeEdge(srcNode, dstNode);
-        System.out.println("Edge added between "+ srcLabel+ " and " + dstLabel);
+        System.out.println("Edge removed between "+ srcLabel+ " and " + dstLabel);
     }
 
     private static MutableNode findNode(String name)

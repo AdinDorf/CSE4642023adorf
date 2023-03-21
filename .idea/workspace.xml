@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="cleaned printmenu">
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Updated AddEdge.&#10;Updated ex.dot to use &quot;gray&quot; instead of &quot;grey&quot; because svgsalamander doesn't accept the British spelling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ex.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ex.dot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +233,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678946778957</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added addEdge">
+      <created>1679122224076</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679122224076</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Updated AddEdge.&#10;Updated ex.dot to use &quot;gray&quot; instead of &quot;grey&quot; because svgsalamander doesn't accept the British spelling">
+      <created>1679266935255</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679266935255</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,7 +273,9 @@
     <MESSAGE value="Added findNode helper function&#10;Added addEdge" />
     <MESSAGE value="Changed addNode to use findNode helper function" />
     <MESSAGE value="cleaned printmenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned printmenu" />
+    <MESSAGE value="added addEdge" />
+    <MESSAGE value="Updated AddEdge.&#10;Updated ex.dot to use &quot;gray&quot; instead of &quot;grey&quot; because svgsalamander doesn't accept the British spelling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated AddEdge.&#10;Updated ex.dot to use &quot;gray&quot; instead of &quot;grey&quot; because svgsalamander doesn't accept the British spelling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -269,7 +284,21 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/MyGraph.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="guru.nidi.graphviz.model.MutableNode" memberName="links" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
