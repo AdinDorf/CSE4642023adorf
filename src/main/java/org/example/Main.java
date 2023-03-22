@@ -160,31 +160,13 @@ public class Main {
     */
     public static void addNode(MyGraph g, String name)
     {
-
-        //Check if a node already exists
-        if(findNode(name)!= null)
-        {
-            System.out.println("Node " + name + " doesn't exist!");
-            return;
-        }
-
-        g.add(mutNode(name));
+        g.addNode(name);
         System.out.println("Successfully added node: " + name);
-
     }
 
     public static void removeNode(MyGraph g, String name)
     {
-        MutableNode n = findNode(name);
-        if (n != null)
-        {
-            g.removeNode(n);
-            System.out.println("Successfully removed node: " + name);
-        }
-        else
-        {
-            System.out.println("Node " + name + " doesn't exist!");
-        }
+       g.removeNode(name);
     }
 
     /*Add an edge and check of duplicate edges: addEdge(String srcLabel,
@@ -192,46 +174,17 @@ String dstLabel)
 • Remove an edge: removeEdge(String srcLabel, String dstLabel)*/
     public static void addEdge(String srcLabel, String dstLabel)
     {
-        MutableNode srcNode = findNode(srcLabel);
-        MutableNode dstNode = findNode(dstLabel);
-
-        if (srcNode == null || dstNode == null)
-        {
-            System.out.println("One or both of the input nodes were not found");
-            return;
-        }
-
-        g = g.addEdge(srcNode,dstNode);
-
-        System.out.println("Edge added between "+ srcLabel+ " and " + dstLabel);
+        g.addEdge(srcLabel, dstLabel);
     }
 
     public static void removeEdge(String srcLabel, String dstLabel)
     {
-        MutableNode srcNode = findNode(srcLabel);
-        MutableNode dstNode = findNode(dstLabel);
 
-        if (srcNode == null || dstNode == null)
-        {
-            System.out.println("Couldn't find " + srcLabel + " or " + dstLabel);
-            return;
-        }
+        g.removeEdge(srcLabel, dstLabel);
 
-        g.removeEdge(srcNode, dstNode);
-        System.out.println("Edge removed between "+ srcLabel+ " and " + dstLabel);
+
     }
 
-    private static MutableNode findNode(String name)
-    {
-        boolean found = false;
-        for (var i : g.nodes())
-        {
-            if(name.equals(i.name().toString())) {
-                return i;
-            }
-        }
 
-        return null;
-    }
 
 }
