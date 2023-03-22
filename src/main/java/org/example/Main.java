@@ -139,7 +139,7 @@ public class Main {
         catch (Exception e)
         {
             System.out.println("Failed to convert graph object to PNG");
-            e.printStackTrace();
+           // e.printStackTrace();
         }
     }
 

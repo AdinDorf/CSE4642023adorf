@@ -21,8 +21,7 @@ public class MyGraph extends MutableGraph {
         //Check if a node already exists
         if(findNode(label)!= null)
         {
-            System.out.println("Node " + label + " doesn't exist!");
-            return;
+            throw new RuntimeException("Node " + label + " doesn't exist!");
         }
 
         add(mutNode(label));
@@ -46,7 +45,8 @@ public class MyGraph extends MutableGraph {
         }
         else
         {
-            System.out.println("Node " + label + " doesn't exist!");
+            //System.out.println("");
+            throw new RuntimeException("Node \" + label + \" doesn't exist!");
         }
 
     }
@@ -83,7 +83,7 @@ public class MyGraph extends MutableGraph {
             return;
         }
 
-        source = source.addLink(dest);
+        source.addLink(dest);
        // System.out.println("Edge added between "+ source + " and " + dest);
 
     }
@@ -111,8 +111,6 @@ public class MyGraph extends MutableGraph {
                 index = source.links().indexOf(l);
                // System.out.print("did the thing");
             }
-
-
 
         }
 
