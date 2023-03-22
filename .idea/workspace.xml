@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Fixed stuff, added string array overloads from add/remove node">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Renamed Project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,18 +56,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -84,10 +80,10 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="CSE464adorf" />
+      <module name="CSE4642023adorf" />
       <option name="PROGRAM_PARAMETERS" value="dot &quot;C:\Users\adin\Desktop\CSE 464\ProjectPart1\ex2.dot&quot;" />
       <extension name="coverage">
         <pattern>
@@ -100,7 +96,7 @@
       </method>
     </configuration>
     <configuration name="MainTest.graphToString (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE464adorf" />
+      <module name="CSE4642023adorf" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -116,7 +112,7 @@
       </method>
     </configuration>
     <configuration name="MainTest.graphToString" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="CSE464adorf" />
+      <module name="CSE4642023adorf" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -132,7 +128,7 @@
       </method>
     </configuration>
     <configuration name="MainTest.testGraphToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE464adorf" />
+      <module name="CSE4642023adorf" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -268,7 +264,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679461775153</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added Test Cases">
+      <created>1679463401753</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1679463401753</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Renamed Project">
+      <created>1679464398993</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1679464398993</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,7 +309,9 @@
     <MESSAGE value="Added RemoveEdge" />
     <MESSAGE value="Refactored addEdge, removeEdge, addNode, removeNode to match project desc" />
     <MESSAGE value="Fixed stuff, added string array overloads from add/remove node" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed stuff, added string array overloads from add/remove node" />
+    <MESSAGE value="Added Test Cases" />
+    <MESSAGE value="Renamed Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed Project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
