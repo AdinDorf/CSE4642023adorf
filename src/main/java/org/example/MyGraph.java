@@ -27,19 +27,26 @@ public class MyGraph extends MutableGraph {
 
         add(mutNode(label));
     }
-
+    public void addNode(String[] label)
+    {
+        for (String l : label)
+        {
+            addNode(l);
+        }
+    }
 
     public void removeNode(String label)
     {
         MutableNode n = findNode(label);
+
         if (n != null)
         {
             nodes.remove(n);
-            System.out.println("Successfully removed node: " + name);
+            System.out.println("Successfully removed node: " + n.name());
         }
         else
         {
-            System.out.println("Node " + name + " doesn't exist!");
+            System.out.println("Node " + label + " doesn't exist!");
         }
 
     }
@@ -77,7 +84,7 @@ public class MyGraph extends MutableGraph {
         }
 
         source = source.addLink(dest);
-        System.out.println("Edge added between "+ source + " and " + dest);
+       // System.out.println("Edge added between "+ source + " and " + dest);
 
     }
 
@@ -102,7 +109,7 @@ public class MyGraph extends MutableGraph {
 
             if (l.to().name() == dest.name() && l.from().name() == source.name()) {
                 index = source.links().indexOf(l);
-                System.out.print("did the thing");
+               // System.out.print("did the thing");
             }
 
 
@@ -110,10 +117,10 @@ public class MyGraph extends MutableGraph {
         }
 
         source.links().remove(index);
-        System.out.println("Edge removed between "+ srcLabel+ " and " + dstLabel);
+        //System.out.println("Edge removed between "+ srcLabel+ " and " + dstLabel);
     }
 
-    private MutableNode findNode(String name)
+    public MutableNode findNode(String name)
     {
         boolean found = false;
         for (var i : nodes())

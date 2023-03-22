@@ -5,6 +5,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.example.Main.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class MainTest {
     private MyGraph g = null;
@@ -20,15 +22,21 @@ class MainTest {
     }
 
     @Test
-    void exportToPNG() {
+    void testExportToPNG() {
     }
 
     @Test
-    void addNode() {
-
+    @DisplayName("Test addNode")
+    void testAddNode() {
+        g.addNode("new");
+        assertNotNull(g.findNode("new"));
     }
+
+
 
     @Test
     void removeNode() {
+        g.removeNode("A");
+        assertNull(g.findNode("A"));
     }
 }

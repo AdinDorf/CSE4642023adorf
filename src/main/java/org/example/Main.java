@@ -46,26 +46,27 @@ public class Main {
                 case "addNode":
                     System.out.println("Enter a name for the new node");
                     input = scan.nextLine();
-                    addNode(g,input);
+                    g.addNode(input);
                     break;
                 case "removeNode":
                     System.out.println("Enter which node should be removed");
                     input = scan.nextLine();
-                    removeNode(g,input);
+                    g.removeNode(input);
                     break;
                 case "addEdge":
                     System.out.println("Enter which nodes to connect");
                     input = scan.nextLine();
                     var tempInput = input;
                     input = scan.nextLine();
-                    addEdge(tempInput, input);
+                    g.addEdge(tempInput, input);
+                    System.out.println("Successfully added node: " + input);
                     break;
                 case "removeEdge":
                     System.out.println("Enter which nodes to disconnect");
                     input = scan.nextLine();
                     var t = input;
                     input = scan.nextLine();
-                    removeEdge(t, input);
+                    g.removeEdge(t, input);
                     break;
             }
 
@@ -158,32 +159,7 @@ public class Main {
             }
         }
     */
-    public static void addNode(MyGraph g, String name)
-    {
-        g.addNode(name);
-        System.out.println("Successfully added node: " + name);
-    }
 
-    public static void removeNode(MyGraph g, String name)
-    {
-       g.removeNode(name);
-    }
-
-    /*Add an edge and check of duplicate edges: addEdge(String srcLabel,
-String dstLabel)
-• Remove an edge: removeEdge(String srcLabel, String dstLabel)*/
-    public static void addEdge(String srcLabel, String dstLabel)
-    {
-        g.addEdge(srcLabel, dstLabel);
-    }
-
-    public static void removeEdge(String srcLabel, String dstLabel)
-    {
-
-        g.removeEdge(srcLabel, dstLabel);
-
-
-    }
 
 
 
