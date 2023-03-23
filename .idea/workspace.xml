@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Renamed Project">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Attempting to fix things">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +82,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="CSE4642023adorf" />
@@ -294,7 +294,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679464551847</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Attempting to fix things">
+      <created>1679552606062</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1679552606062</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Attempting to fix things">
+      <created>1679552697543</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1679552697543</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -327,7 +341,8 @@
     <MESSAGE value="Fixed stuff, added string array overloads from add/remove node" />
     <MESSAGE value="Added Test Cases" />
     <MESSAGE value="Renamed Project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed Project" />
+    <MESSAGE value="Attempting to fix things" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attempting to fix things" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
