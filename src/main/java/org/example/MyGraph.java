@@ -181,21 +181,20 @@ public class MyGraph extends MutableGraph {
             for(Link l : currentNode.links())
             {
                 //Create a temp node for readability
-                MutableNode lTarget = (MutableNode)l.to();
-
-
-         /*       if (lTarget instanceof MyGraph)
+                LinkTarget lTarget = l.to();
+                MutableNode newNode = findNode(lTarget.name().toString());
+            /*       if (lTarget instanceof MyGraph)
                 {
                     Exception e = new RuntimeException("GraphSearch doesn't support subgraphs, sorrynotsorry");
                     //GraphSearch();
                 }*/
 
-                if (lTarget instanceof MutableNode)
+                if (newNode instanceof MutableNode)
                 {
-                    if (!visited.get(lTarget)) {
-                        visited.put((MutableNode) lTarget, true);
+                    if (!visited.get(newNode)) {
+                        visited.put(newNode, true);
                         //set the parent of w
-                        q.add((MutableNode) lTarget);
+                        q.add(newNode);
                     }
                 }
                 else
@@ -227,7 +226,8 @@ public class MyGraph extends MutableGraph {
         }
 
 
-    }*/
+    }
+*/
 
 
 }
