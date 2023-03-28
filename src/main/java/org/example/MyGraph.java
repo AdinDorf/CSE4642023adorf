@@ -2,17 +2,30 @@ package org.example;
 import guru.nidi.graphviz.model.*;
 
 import java.awt.*;
-import java.util.LinkedHashSet;
+import java.util.*;
 import java.util.List;
-import java.util.ListIterator;
 
 import static guru.nidi.graphviz.model.Factory.mutNode;
 
 public class MyGraph extends MutableGraph {
 
-    public MyGraph(MutableGraph g)
+
+    //Factory method pattern for converting subgraphs within MyGraph into MyGraphs
+    //Credit to Chris Feger for this monstrosity
+    private MyGraph(MutableGraph g, LinkedHashSet<MutableGraph> newSubgraphs)
     {
-        super(g.isStrict(), g.isDirected(), g.isCluster(), g.name(), (LinkedHashSet<MutableNode>)g.rootNodes(), (LinkedHashSet<MutableGraph>)g.graphs(), g.links(), g.nodeAttrs(), g.linkAttrs(), g.graphAttrs());
+        super(g.isStrict(), g.isDirected(), g.isCluster(), g.name(), (LinkedHashSet<MutableNode>)g.rootNodes(), newSubgraphs, g.links(), g.nodeAttrs(), g.linkAttrs(), g.graphAttrs());
+    }
+
+    //
+    public static MyGraph buildGraph(MutableGraph g)
+    {
+        LinkedHashSet<MutableGraph> convertedSubs = new LinkedHashSet<MutableGraph>();
+        for (MutableGraph subg : g.graphs()) {
+            convertedSubs.add(buildGraph(subg));
+        }
+
+        return new MyGraph(g, convertedSubs);
     }
 
 
@@ -130,6 +143,86 @@ public class MyGraph extends MutableGraph {
         return null;
     }
 
+    public void GraphSearch(MutableNode src, MutableNode dst)
+    {
+
+        //set the current node to source
+        MutableNode current = src;
+
+        //Init an empty queue for BFS
+        Queue<MutableNode> q =  new LinkedList<>();
+
+        //Init Dictionary to keep track of visited nodes
+        Dictionary<MutableNode, Boolean> visited = new Hashtable<MutableNode, Boolean>();
+        for (var i : nodes())
+        {
+            visited.put(i, false);
+        }
+
+        //Now start the BFS algorithm
+
+        //set src to visited
+        visited.put(current, true);
+        q.add(current);
+
+        while (!q.isEmpty())
+        {
+            current = q.remove();
+
+            //Check for the destination node
+            if (current == dst) {
+                //traverse through the parent nodes
+
+            }
+
+            //for each edge attached to
+            for(Link l : current.links())
+            {
+                //Create a temp node for readability
+                var w = l.to();
+
+
+                if (w instanceof MutableNode)
+                {
+                    System.out.println("Node!");
+                    visited.put((MutableNode)w, true);
+                    q.add((MutableNode) w);
+                }
+                else if (w instanceof MyGraph)
+                {
+
+                    //GraphSearch();
+                }
+                /*
+                if (visited.get(w) != true)
+                {
+                    visited.put((MutableNode) w, true);
+                    //set the parent of w
+                    q.add((MutableNode)w );
+                }*/
+
+            }
+
+        }
+
+    }
+/*
+    private void NormalizeGraph (MutableGraph graph)
+    {
+        for (Link l : graph.links())
+        {
+            if (l.to() instanceof MutableGraph)
+            {
+                NormalizeGraph((MutableGraph)l.to());
+            }
+            else
+            {
+
+            }
+        }
+
+
+    }*/
 
 
 }

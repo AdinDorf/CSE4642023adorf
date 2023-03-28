@@ -68,13 +68,19 @@ public class Main {
                     input = scan.nextLine();
                     g.removeEdge(t, input);
                     break;
+                case "bfs":
+                    System.out.println("Enter the source and dest node names");
+                    input = scan.nextLine();
+                    var temp = input;
+                    input = scan.nextLine();
+                    bfs(temp, input);
+                    break;
             }
 
             printMenu();
             input = scan.nextLine();
         }
     }
-
     public static void printMenu()
     {
 
@@ -120,7 +126,7 @@ public class Main {
 
         try {
             InputStream dot = new FileInputStream(inputPath);
-            return new MyGraph(new Parser().read(dot));
+            return MyGraph.buildGraph(new Parser().read(dot));
         }
         catch (Exception e)
         {
@@ -142,6 +148,12 @@ public class Main {
            // e.printStackTrace();
         }
     }
+
+    public static void bfs(String src, String dst)
+    {
+        g.GraphSearch(g.findNode(src), g.findNode(dst));
+    }
+
 
     /*
         public static void outputGraph(String filepath)

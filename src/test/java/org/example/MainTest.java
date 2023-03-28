@@ -28,10 +28,6 @@ class MainTest {
     @Test
     void testExportToPNGFail()
     {
-        /*
-        Exception e = assertThrows(Exception.class, () -> {
-            exportToPNG(null, "testFail");
-        });*/
         exportToPNG(null, "testFail");
     }
 
@@ -44,9 +40,7 @@ class MainTest {
 
     @Test
     void testAddExistingNode() {
-        Exception e = assertThrows(RuntimeException.class, () ->  {
-            g.addNode("A");
-        });
+       assertThrows(RuntimeException.class, () -> g.addNode("A"));
     }
 
     @Test
@@ -58,8 +52,6 @@ class MainTest {
     @Test
     void removeNodeFail()
     {
-        Exception e = assertThrows(RuntimeException.class, () ->  {
-            g.removeNode("DNE");
-        });
+        assertThrows(RuntimeException.class, () -> g.removeNode("DNE"));
     }
 }
