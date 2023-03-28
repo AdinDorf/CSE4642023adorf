@@ -11,7 +11,8 @@ public class MyGraph extends MutableGraph {
 
 
     //Factory method pattern for converting subgraphs within MyGraph into MyGraphs
-    //Credit to Chris Feger for this monstrosity
+    //This is unnecessary since I'm ignoring subgraphs, but I'm keeping it here anyway because I spent a whole night figuring it out
+    //Credit to Chris Feger for the suggestion to make it a factory method pattern to do constructor preprocessing
     private MyGraph(MutableGraph g, LinkedHashSet<MutableGraph> newSubgraphs)
     {
         super(g.isStrict(), g.isDirected(), g.isCluster(), g.name(), (LinkedHashSet<MutableNode>)g.rootNodes(), newSubgraphs, g.links(), g.nodeAttrs(), g.linkAttrs(), g.graphAttrs());
@@ -147,7 +148,7 @@ public class MyGraph extends MutableGraph {
     {
 
         //set the current node to source
-        MutableNode current = src;
+        MutableNode currentNode = src;
 
         //Init an empty queue for BFS
         Queue<MutableNode> q =  new LinkedList<>();
@@ -162,44 +163,48 @@ public class MyGraph extends MutableGraph {
         //Now start the BFS algorithm
 
         //set src to visited
-        visited.put(current, true);
-        q.add(current);
+        visited.put(currentNode, true);
+        q.add(currentNode);
 
         while (!q.isEmpty())
         {
-            current = q.remove();
+            currentNode = q.remove();
 
             //Check for the destination node
-            if (current == dst) {
+            if (currentNode == dst) {
                 //traverse through the parent nodes
-
+                System.out.print("Found the destination node!");
+                return;
             }
 
             //for each edge attached to
-            for(Link l : current.links())
+            for(Link l : currentNode.links())
             {
                 //Create a temp node for readability
-                var w = l.to();
+                MutableNode lTarget = (MutableNode)l.to();
 
 
-                if (w instanceof MutableNode)
+         /*       if (lTarget instanceof MyGraph)
                 {
-                    System.out.println("Node!");
-                    visited.put((MutableNode)w, true);
-                    q.add((MutableNode) w);
-                }
-                else if (w instanceof MyGraph)
-                {
-
+                    Exception e = new RuntimeException("GraphSearch doesn't support subgraphs, sorrynotsorry");
                     //GraphSearch();
-                }
-                /*
-                if (visited.get(w) != true)
-                {
-                    visited.put((MutableNode) w, true);
-                    //set the parent of w
-                    q.add((MutableNode)w );
                 }*/
+
+                if (lTarget instanceof MutableNode)
+                {
+                    if (!visited.get(lTarget)) {
+                        visited.put((MutableNode) lTarget, true);
+                        //set the parent of w
+                        q.add((MutableNode) lTarget);
+                    }
+                }
+                else
+                {
+                    //lTarget.node();
+                }
+
+
+
 
             }
 

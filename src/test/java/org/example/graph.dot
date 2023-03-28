@@ -1,5 +1,22 @@
 digraph D {
 
-A -> {B C {D H}} -> {F}
+//A -> {B C {D H}} -> {F}
+Source -> A
+
+A -> B
+A -> C
+A -> D
+
+B -> F
+B -> G
+B -> H
+
+C -> I
+
+D -> J
+D -> K
+
+C -> Dest
+H -> Dest
 
 }
