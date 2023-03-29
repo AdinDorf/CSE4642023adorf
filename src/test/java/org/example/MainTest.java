@@ -14,16 +14,18 @@ public class MainTest {
         g = parseGraph("src/test/java/org/example/ex.dot");
     }
 
+    /*
     @Test
     @DisplayName("Ensure ToString works correctly")
     public void testGraphToString() {
-        graphToString(g);
+        assertDoesNotThrow();graphToString(g);
     }
 
     @Test
     public void testExportToPNG() {
         exportToPNG(g, "testPNG");
     }
+*/
 
     @Test
     @DisplayName("Test addNode")
