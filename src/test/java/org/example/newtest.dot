@@ -1,0 +1,9 @@
+digraph D {
+
+    //Subgraphs are stupid and make my job very difficult
+    //For example, recursively unraveling this would be impossible.
+
+    {A B} -> {A B}
+
+}
+

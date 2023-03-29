@@ -144,7 +144,7 @@ public class MyGraph extends MutableGraph {
         return null;
     }
 
-    public void GraphSearch(MutableNode src, MutableNode dst)
+    public Path GraphSearch(MutableNode src, MutableNode dst)
     {
 
         //set the current node to source
@@ -155,9 +155,12 @@ public class MyGraph extends MutableGraph {
 
         //Init Dictionary to keep track of visited nodes
         Dictionary<MutableNode, Boolean> visited = new Hashtable<MutableNode, Boolean>();
+        Dictionary<MutableNode, MutableNode> parents = new Hashtable<MutableNode, MutableNode>();
+
         for (var i : nodes())
         {
             visited.put(i, false);
+            parents.put(i, currentNode);
         }
 
         //Now start the BFS algorithm
@@ -173,8 +176,16 @@ public class MyGraph extends MutableGraph {
             //Check for the destination node
             if (currentNode == dst) {
                 //traverse through the parent nodes
-                System.out.print("Found the destination node!");
-                return;
+                Path p = new Path();
+                p.add(currentNode);
+                MutableNode parent = parents.get(currentNode);
+
+                while (parent != src) {
+                    p.add(parent);
+                    parent = parents.get(parent);
+                }
+                p.add(src);
+                return p;
             }
 
             //for each edge attached to
@@ -193,41 +204,21 @@ public class MyGraph extends MutableGraph {
                 {
                     if (!visited.get(newNode)) {
                         visited.put(newNode, true);
-                        //set the parent of w
+                        parents.put(newNode,currentNode);
                         q.add(newNode);
                     }
                 }
                 else
                 {
-                    //lTarget.node();
+                    Exception e = new RuntimeException("Node is of an unexpected type");
                 }
 
-
-
-
             }
 
         }
 
+        return null;
     }
-/*
-    private void NormalizeGraph (MutableGraph graph)
-    {
-        for (Link l : graph.links())
-        {
-            if (l.to() instanceof MutableGraph)
-            {
-                NormalizeGraph((MutableGraph)l.to());
-            }
-            else
-            {
-
-            }
-        }
-
-
-    }
-*/
 
 
 }

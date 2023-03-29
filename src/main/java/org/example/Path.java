@@ -11,7 +11,7 @@ public class Path {
 
     public Path()
     {
-        p = null;
+
     }
 
     public void add(MutableNode n)
@@ -23,10 +23,10 @@ public class Path {
     public String toString() {
         String s = new String();
         for (MutableNode l : p) {
-            s += l.toString();
+            s += l.name().toString();
             s+= " -> ";
         }
-        s += "end";
+        s = s.substring(0, s.length()-3);
         return s;
     }
 }

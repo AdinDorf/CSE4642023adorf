@@ -86,7 +86,7 @@ public class Main {
 
         System.out.println(
                 """
-                        **********************************************************
+                        \n**********************************************************
                         Please enter one of the following commands
                         dot: parses a dot graph given a path
                         tostring: Outputs a dot graph if there is one currently in memory
@@ -151,7 +151,9 @@ public class Main {
 
     public static void bfs(String src, String dst)
     {
-        g.GraphSearch(g.findNode(src), g.findNode(dst));
+        Path p = new Path();
+        p = g.GraphSearch(g.findNode(src), g.findNode(dst));
+        System.out.print(p.toString());
     }
 
 
