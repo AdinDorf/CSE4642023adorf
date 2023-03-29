@@ -11,7 +11,7 @@ public class MainTest {
     private MyGraph g = null;
     @BeforeEach
     public void setUp(){
-        g = parseGraph("src/test/java/org/example/graph.dot");
+        g = parseGraph("src/test/java/org/example/ex.dot");
     }
 
     @Test
