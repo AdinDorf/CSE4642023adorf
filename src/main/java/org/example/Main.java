@@ -69,11 +69,15 @@ public class Main {
                     g.removeEdge(t, input);
                     break;
                 case "graphSearch":
-                    System.out.println("Enter the source and dest node names");
+                    System.out.println("Enter the source node name");
                     input = scan.nextLine();
                     var temp = input;
+                    System.out.println("Enter the destination node name");
                     input = scan.nextLine();
-                    GraphSearch(temp, input);
+                    System.out.println("Enter the search algorithm to use (bfs or dfs)");
+                    var alg = scan.nextLine();
+
+                    GraphSearch(temp, input, alg);
                     break;
             }
 
@@ -150,10 +154,22 @@ public class Main {
         }
     }
 
-    public static void GraphSearch(String src, String dst)
+    public static void GraphSearch(String src, String dst, String alg)
     {
         Path p = new Path();
-        p = g.GraphSearch(g.findNode(src), g.findNode(dst));
+        MyGraph.Algorithm a;
+        if (alg.equals("bfs"))
+        {
+            a = MyGraph.Algorithm.bfs;
+        } else if (alg.equals("dfs")) {
+            a = MyGraph.Algorithm.dfs;
+        }
+        else{
+            System.out.println("Please enter a valid algorithm (bfs or dfs)");
+            return;
+        }
+
+        p = g.GraphSearch(g.findNode(src), g.findNode(dst), a);
         System.out.print(p.toString());
     }
 

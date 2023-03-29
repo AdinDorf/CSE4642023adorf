@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Added Path.java&#10;Messed around with subgraphs and bfs">
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Added an enum Search to set the type of graphsearch to use">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Path.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +154,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MainTest.testGraphToString" />
+        <item itemvalue="JUnit.MainTest.graphToString (1)" />
         <item itemvalue="JUnit.MainTest.testGraphToString" />
         <item itemvalue="JUnit.MainTest.graphToString (1)" />
       </list>
@@ -323,7 +324,28 @@
       <option name="project" value="LOCAL" />
       <updated>1679553020091</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Completed GraphSearch!">
+      <created>1680060215981</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680060215981</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Merge DFS into Main">
+      <created>1680066175852</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680066175852</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Added an enum Search to set the type of graphsearch to use">
+      <created>1680068592674</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1680068592674</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,7 +381,10 @@
     <MESSAGE value="Attempting to fix things" />
     <MESSAGE value="Clear Warnings" />
     <MESSAGE value="Added Path.java&#10;Messed around with subgraphs and bfs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Path.java&#10;Messed around with subgraphs and bfs" />
+    <MESSAGE value="Completed GraphSearch!" />
+    <MESSAGE value="Merge DFS into Main" />
+    <MESSAGE value="Added an enum Search to set the type of graphsearch to use" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an enum Search to set the type of graphsearch to use" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -377,24 +402,14 @@
           <option name="timeStamp" value="15" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/MyGraph.java</url>
-          <line>170</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/MyGraph.java</url>
-          <line>189</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/MyGraph.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Path.java</url>
           <line>29</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/MyGraph.java</url>
+          <line>255</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

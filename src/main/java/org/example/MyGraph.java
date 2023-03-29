@@ -1,21 +1,19 @@
 package org.example;
 import guru.nidi.graphviz.model.*;
 
-import java.awt.*;
 import java.util.*;
-import java.util.List;
 
 import static guru.nidi.graphviz.model.Factory.mutNode;
 
 public class MyGraph extends MutableGraph {
 
 
-    private enum Search {
+    public enum Algorithm {
         dfs,
         bfs
     }
 
-    Search searchType;
+    Algorithm searchType;
 
     //Factory method pattern for converting subgraphs within MyGraph into MyGraphs
     //This is unnecessary since I'm ignoring subgraphs, but I'm keeping it here anyway because I spent a whole night figuring it out
@@ -23,7 +21,7 @@ public class MyGraph extends MutableGraph {
     private MyGraph(MutableGraph g, LinkedHashSet<MutableGraph> newSubgraphs)
     {
         super(g.isStrict(), g.isDirected(), g.isCluster(), g.name(), (LinkedHashSet<MutableNode>)g.rootNodes(), newSubgraphs, g.links(), g.nodeAttrs(), g.linkAttrs(), g.graphAttrs());
-        searchType = Search.bfs;
+        searchType = Algorithm.bfs;
     }
 
     //
@@ -152,8 +150,9 @@ public class MyGraph extends MutableGraph {
         return null;
     }
 
-    public Path GraphSearch(MutableNode src, MutableNode dst)
+    public Path GraphSearch(MutableNode src, MutableNode dst, Algorithm alg)
     {
+
 
         //set the current node to source
         MutableNode currentNode = src;
@@ -181,10 +180,10 @@ public class MyGraph extends MutableGraph {
 
         //set src to visited
         visited.put(currentNode, true);
-        if (searchType == Search.dfs) {
+        if (alg == Algorithm.dfs) {
             s.add(currentNode);
         }
-        else if (searchType == Search.bfs){
+        else if (alg == Algorithm.bfs){
             q.add(currentNode);
         }
         else {
@@ -195,10 +194,10 @@ public class MyGraph extends MutableGraph {
 
         while (!empty)
         {
-            if (searchType == Search.dfs) {
+            if (alg == Algorithm.dfs) {
                 currentNode = s.pop();
             }
-            else if (searchType == Search.bfs){
+            else if (alg == Algorithm.bfs){
                 currentNode = q.remove();
             }
             else {
@@ -236,10 +235,10 @@ public class MyGraph extends MutableGraph {
                         visited.put(newNode, true);
                         parents.put(newNode,currentNode);
 
-                        if (searchType == Search.dfs) {
+                        if (alg == Algorithm.dfs) {
                             s.add(newNode);
                         }
-                        else if (searchType == Search.bfs){
+                        else if (alg == Algorithm.bfs){
                             q.add(newNode);
                         }
                         else {
@@ -254,10 +253,10 @@ public class MyGraph extends MutableGraph {
 
             }
 
-            if (searchType == Search.dfs) {
+            if (alg == Algorithm.dfs) {
                 empty = s.isEmpty();
             }
-            else if (searchType == Search.bfs){
+            else if (alg == Algorithm.bfs){
                 empty = q.isEmpty();
             }
             else {
