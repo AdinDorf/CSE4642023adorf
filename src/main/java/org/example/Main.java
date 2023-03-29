@@ -68,12 +68,12 @@ public class Main {
                     input = scan.nextLine();
                     g.removeEdge(t, input);
                     break;
-                case "bfs":
+                case "graphSearch":
                     System.out.println("Enter the source and dest node names");
                     input = scan.nextLine();
                     var temp = input;
                     input = scan.nextLine();
-                    bfs(temp, input);
+                    GraphSearch(temp, input);
                     break;
             }
 
@@ -97,6 +97,7 @@ public class Main {
                         removeNodes: remove a list of nodes by name, delimited by commas
                         addEdge: add an edge between two nodes
                         removeEdge: remove an edge between two nodes
+                        graphSearch: return a path between two nodes
                         """
         );
     }
@@ -149,7 +150,7 @@ public class Main {
         }
     }
 
-    public static void bfs(String src, String dst)
+    public static void GraphSearch(String src, String dst)
     {
         Path p = new Path();
         p = g.GraphSearch(g.findNode(src), g.findNode(dst));

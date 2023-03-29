@@ -10,12 +10,20 @@ import static guru.nidi.graphviz.model.Factory.mutNode;
 public class MyGraph extends MutableGraph {
 
 
+    private enum Search {
+        dfs,
+        bfs
+    }
+
+    Search searchType;
+
     //Factory method pattern for converting subgraphs within MyGraph into MyGraphs
     //This is unnecessary since I'm ignoring subgraphs, but I'm keeping it here anyway because I spent a whole night figuring it out
     //Credit to Chris Feger for the suggestion to make it a factory method pattern to do constructor preprocessing
     private MyGraph(MutableGraph g, LinkedHashSet<MutableGraph> newSubgraphs)
     {
         super(g.isStrict(), g.isDirected(), g.isCluster(), g.name(), (LinkedHashSet<MutableNode>)g.rootNodes(), newSubgraphs, g.links(), g.nodeAttrs(), g.linkAttrs(), g.graphAttrs());
+        searchType = Search.bfs;
     }
 
     //
@@ -151,9 +159,13 @@ public class MyGraph extends MutableGraph {
         MutableNode currentNode = src;
 
         //Init an empty stack for dfs
-        Stack<MutableNode> s =  new Stack<>();
+            Stack<MutableNode> s =  new Stack<>();
+
         //Init an empty queue for BFS
-       // Queue<MutableNode> q =  new LinkedList<>();
+            Queue<MutableNode> q =  new LinkedList<>();
+
+            boolean empty = false;
+
 
         //Init Dictionary to keep track of visited nodes
         Dictionary<MutableNode, Boolean> visited = new Hashtable<MutableNode, Boolean>();
@@ -165,17 +177,33 @@ public class MyGraph extends MutableGraph {
             parents.put(i, currentNode);
         }
 
-        //Now start the BFS algorithm
+        //Now start the search algorithm
 
         //set src to visited
         visited.put(currentNode, true);
-        s.add(currentNode);
-       // q.add(currentNode);
+        if (searchType == Search.dfs) {
+            s.add(currentNode);
+        }
+        else if (searchType == Search.bfs){
+            q.add(currentNode);
+        }
+        else {
+            Exception e = new RuntimeException("Search type somehow not set");
+        }
 
-        while (!s.isEmpty())
+
+
+        while (!empty)
         {
-            currentNode = s.pop();
-           // currentNode = q.remove();
+            if (searchType == Search.dfs) {
+                currentNode = s.pop();
+            }
+            else if (searchType == Search.bfs){
+                currentNode = q.remove();
+            }
+            else {
+                Exception e = new RuntimeException("Search type somehow not set");
+            }
 
             //Check for the destination node
             if (currentNode == dst) {
@@ -197,20 +225,26 @@ public class MyGraph extends MutableGraph {
             {
                 //Create a temp node for readability
                 LinkTarget lTarget = l.to();
+
+                //this is a TERRIBLE solution, but this package is GARBAGE and won't let me access the next node from a current one
+                //Sorry for the bad code, but that isn't what this assignment is about
                 MutableNode newNode = findNode(lTarget.name().toString());
-            /*       if (lTarget instanceof MyGraph)
-                {
-                    Exception e = new RuntimeException("GraphSearch doesn't support subgraphs, sorrynotsorry");
-                    //GraphSearch();
-                }*/
 
                 if (newNode instanceof MutableNode)
                 {
                     if (!visited.get(newNode)) {
                         visited.put(newNode, true);
                         parents.put(newNode,currentNode);
-                        s.add(newNode);
-                        //q.add(newNode);
+
+                        if (searchType == Search.dfs) {
+                            s.add(newNode);
+                        }
+                        else if (searchType == Search.bfs){
+                            q.add(newNode);
+                        }
+                        else {
+                            Exception e = new RuntimeException("Search type somehow not set");
+                        }
                     }
                 }
                 else
@@ -218,6 +252,16 @@ public class MyGraph extends MutableGraph {
                     Exception e = new RuntimeException("Node is of an unexpected type");
                 }
 
+            }
+
+            if (searchType == Search.dfs) {
+                empty = s.isEmpty();
+            }
+            else if (searchType == Search.bfs){
+                empty = q.isEmpty();
+            }
+            else {
+                Exception e = new RuntimeException("Search type somehow not set");
             }
 
         }
