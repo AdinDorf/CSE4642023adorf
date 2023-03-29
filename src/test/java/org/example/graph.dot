@@ -16,7 +16,7 @@ C -> I
 D -> J
 D -> K
 
-C -> Dest
+
 H -> Dest
 
 }

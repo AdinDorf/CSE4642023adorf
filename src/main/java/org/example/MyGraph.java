@@ -150,8 +150,8 @@ public class MyGraph extends MutableGraph {
         //set the current node to source
         MutableNode currentNode = src;
 
-        //Init an empty queue for BFS
-        Queue<MutableNode> q =  new LinkedList<>();
+        //Init an empty stack for dfs
+        Stack<MutableNode> s =  new Stack<>();
 
         //Init Dictionary to keep track of visited nodes
         Dictionary<MutableNode, Boolean> visited = new Hashtable<MutableNode, Boolean>();
@@ -167,11 +167,11 @@ public class MyGraph extends MutableGraph {
 
         //set src to visited
         visited.put(currentNode, true);
-        q.add(currentNode);
+        s.add(currentNode);
 
-        while (!q.isEmpty())
+        while (!s.isEmpty())
         {
-            currentNode = q.remove();
+            currentNode = s.pop();
 
             //Check for the destination node
             if (currentNode == dst) {
@@ -205,7 +205,7 @@ public class MyGraph extends MutableGraph {
                     if (!visited.get(newNode)) {
                         visited.put(newNode, true);
                         parents.put(newNode,currentNode);
-                        q.add(newNode);
+                        s.add(newNode);
                     }
                 }
                 else

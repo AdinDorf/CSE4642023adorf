@@ -68,12 +68,12 @@ public class Main {
                     input = scan.nextLine();
                     g.removeEdge(t, input);
                     break;
-                case "bfs":
+                case "dfs":
                     System.out.println("Enter the source and dest node names");
                     input = scan.nextLine();
                     var temp = input;
                     input = scan.nextLine();
-                    bfs(temp, input);
+                    dfs(temp, input);
                     break;
             }
 
@@ -149,7 +149,7 @@ public class Main {
         }
     }
 
-    public static void bfs(String src, String dst)
+    public static void dfs(String src, String dst)
     {
         Path p = new Path();
         p = g.GraphSearch(g.findNode(src), g.findNode(dst));
