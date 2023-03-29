@@ -7,50 +7,50 @@ import org.junit.jupiter.api.Test;
 import static org.example.Main.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class MainTest {
+public class MainTest {
     private MyGraph g = null;
     @BeforeEach
-    void setUp(){
-        g = parseGraph("src/test/java/org/example/ex.dot");
+    public void setUp(){
+        g = parseGraph("src/test/java/org/example/graph.dot");
     }
 
     @Test
     @DisplayName("Ensure ToString works correctly")
-    void testGraphToString() {
+    public void testGraphToString() {
         graphToString(g);
     }
 
     @Test
-    void testExportToPNG() {
+    public void testExportToPNG() {
         exportToPNG(g, "testPNG");
     }
 
     @Test
-    void testExportToPNGFail()
+    public void testExportToPNGFail()
     {
         exportToPNG(null, "testFail");
     }
 
     @Test
     @DisplayName("Test addNode")
-    void testAddNode() {
+    public void testAddNode() {
         g.addNode("new");
         assertNotNull(g.findNode("new"));
     }
 
     @Test
-    void testAddExistingNode() {
+    public void testAddExistingNode() {
        assertThrows(RuntimeException.class, () -> g.addNode("A"));
     }
 
     @Test
-    void removeNode() {
+    public void removeNode() {
         g.removeNode("A");
         assertNull(g.findNode("A"));
     }
 
     @Test
-    void removeNodeFail()
+    public void removeNodeFail()
     {
         assertThrows(RuntimeException.class, () -> g.removeNode("DNE"));
     }
