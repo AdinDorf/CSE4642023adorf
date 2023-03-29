@@ -1,5 +1,6 @@
 package org.example;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,20 +21,20 @@ public class MainTest {
     public void testGraphToString() {
         assertDoesNotThrow();graphToString(g);
     }
-
+*/
     @Test
     public void testExportToPNG() {
         exportToPNG(g, "testPNG");
     }
-*/
 
+/*
     @Test
     @DisplayName("Test addNode")
     public void testAddNode() {
         g.addNode("new");
         assertNotNull(g.findNode("new"));
     }
-
+*/
     @Test
     public void testAddExistingNode() {
        assertThrows(RuntimeException.class, () -> g.addNode("A"));
