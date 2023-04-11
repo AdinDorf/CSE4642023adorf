@@ -11,10 +11,10 @@ import java.util.Scanner;
 import static guru.nidi.graphviz.model.Factory.*;
 
 public class Main {
-    public static MyGraph g = null;
-    public static void main(String[] args)
-    {
+    public static Graph g = null;
+    public static void main(String[] args)  {
 
+        Graph g = new Graph();
         Scanner scan = new Scanner(System.in);
         printMenu();
         String input = scan.nextLine();
@@ -23,26 +23,26 @@ public class Main {
         {
 
             switch(input) {
-                case "dot":
+                /*case "dot":
                     // API for output to file: outputGraph(String filepath)
                     System.out.println("Enter a path: ");
                     input = scan.nextLine();
                     g = parseGraph(input);
                     graphToString(g);
                     break;
-
+*/
                 case "tostring":
-                    graphToString(g);
+                    g.toString();
                     break;
 
                 case "outputGraph":
                     //outputGraph(file);
                     break;
-                case "toPNG":
+                /*case "toPNG":
                     System.out.println("Enter a name for the PNG. It will be saved to ./example/[name].png: ");
                     input = scan.nextLine();
                     exportToPNG(g,input);
-                    break;
+                    break;*/
                 case "addNode":
                     System.out.println("Enter a name for the new node");
                     input = scan.nextLine();
@@ -53,6 +53,7 @@ public class Main {
                     input = scan.nextLine();
                     g.removeNode(input);
                     break;
+
                 case "addEdge":
                     System.out.println("Enter which nodes to connect");
                     input = scan.nextLine();
@@ -61,6 +62,7 @@ public class Main {
                     g.addEdge(tempInput, input);
                     System.out.println("Successfully added node: " + input);
                     break;
+
                 case "removeEdge":
                     System.out.println("Enter which nodes to disconnect");
                     input = scan.nextLine();
@@ -68,7 +70,8 @@ public class Main {
                     input = scan.nextLine();
                     g.removeEdge(t, input);
                     break;
-                case "graphSearch":
+
+              /*  case "graphSearch":
                     System.out.println("Enter the source node name");
                     input = scan.nextLine();
                     var temp = input;
@@ -79,6 +82,8 @@ public class Main {
 
                     GraphSearch(temp, input, alg);
                     break;
+
+               */
             }
 
             printMenu();
@@ -105,23 +110,7 @@ public class Main {
                         """
         );
     }
-
-    public static void graphToString(MyGraph g)
-    {
-        //TODO: Output the number of nodes, the label of the nodes, the number of edges, the
-        // nodes and the edge direction of edges (e.g., a -> b)
-        // API for printing a graph: toString()
-        StringBuilder s = new StringBuilder();
-
-        s.append("Number of Nodes: ").append(g.nodes().size()).append("\n");
-        s.append("Node Labels: ").append(g.nodes()).append("\n");
-        s.append("Number of Edges: ").append(g.edges().size()).append("\n");
-        for (var i : g.edges())
-        {
-            s.append(i.name()).append("\n");
-        }
-        System.out.println("Graph: \n" + s);
-    }
+    /*
     public static MyGraph parseGraph(String inputPath)
     {
         //TODO: Feature 1: Parse a DOT graph file to create a graph (20 points)
@@ -141,7 +130,8 @@ public class Main {
             return null;
         }
     }
-
+     */
+/*
     public static void exportToPNG(MyGraph g, String name) {
         try {
             System.out.println("Exported graph " + name + " to png: ");
@@ -153,6 +143,9 @@ public class Main {
            // e.printStackTrace();
         }
     }
+  */
+
+    /*
 
     public static void GraphSearch(String src, String dst, String alg)
     {
@@ -173,7 +166,7 @@ public class Main {
         System.out.print(p.toString());
     }
 
-
+*/
     /*
         public static void outputGraph(String filepath)
         {
