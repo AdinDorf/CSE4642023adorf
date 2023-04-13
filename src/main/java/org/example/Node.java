@@ -20,6 +20,12 @@ public class Node {
         this.parent = parent;
     }
 
+    public void addEdge(Edge e)
+    {
+        descendents.add(e);
+    }
+
+
     @Override
     public String toString()
     {

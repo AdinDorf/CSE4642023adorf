@@ -23,14 +23,14 @@ public class Main {
         {
 
             switch(input) {
-                /*case "dot":
+                case "dot":
                     // API for output to file: outputGraph(String filepath)
                     System.out.println("Enter a path: ");
                     input = scan.nextLine();
                     g = parseGraph(input);
-                    graphToString(g);
+                    //g.toString();
                     break;
-*/
+
                 case "tostring":
                     g.toString();
                     break;
@@ -110,17 +110,23 @@ public class Main {
                         """
         );
     }
-    /*
-    public static MyGraph parseGraph(String inputPath)
+
+    public static Graph parseGraph(String inputPath)
     {
-        //TODO: Feature 1: Parse a DOT graph file to create a graph (20 points)
+        // Feature 1: Parse a DOT graph file to create a graph (20 points)
         // Accept a DOT graph file and create a directed graph object (define your own
         // graph class or use the graph class in your chosen libraries)
         // API: parseGraph(String filepath)
 
+        //TODO: Get rid of MyGraph entirely and use MutableGraph. This will be refactor 2 or 3 (however I decide to break this up)
+        MyGraph graphToConvert;
         try {
             InputStream dot = new FileInputStream(inputPath);
-            return MyGraph.buildGraph(new Parser().read(dot));
+            graphToConvert = MyGraph.buildGraph(new Parser().read(dot));
+
+            //Thanks Java garbage man!
+            g = new Graph(graphToConvert);
+
         }
         catch (Exception e)
         {
@@ -129,8 +135,10 @@ public class Main {
             e.printStackTrace();
             return null;
         }
+
+        return g;
     }
-     */
+
 /*
     public static void exportToPNG(MyGraph g, String name) {
         try {

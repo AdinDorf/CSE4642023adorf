@@ -1,5 +1,11 @@
 package org.example;
 
+import guru.nidi.graphviz.model.Link;
+import guru.nidi.graphviz.model.LinkSource;
+import guru.nidi.graphviz.model.MutableGraph;
+import guru.nidi.graphviz.model.MutableNode;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
@@ -18,6 +24,61 @@ public class Graph {
     {
         this.nodes = nodes;
         this.edges = edges;
+    }
+
+    public Graph(MutableGraph graphToConvert) {
+        //Snag all the Nodes, Edges, etc. from the MutableGraph and then tell it to (politely) fuck off <3
+
+        //Since my edges are reliant on nodes for their existence, parse all nodes first,
+        ArrayList<Node> nodeList = new ArrayList<>();
+        for (MutableNode n : graphToConvert.nodes())
+        {
+            nodeList.add(new Node(n.name().toString()));
+        }
+
+        this.nodes = nodeList;
+
+        //Transform n.links() into an arraylist of Edges
+        ArrayList<Edge> edgeList = new ArrayList<>();
+
+        initEdges(graphToConvert, edgeList);
+
+        //I think this should work?
+
+        this.edges = edgeList;
+    }
+
+
+    private void initEdges(MutableGraph convertGraph, ArrayList<Edge> edgeList)
+    {
+        for (Link link : convertGraph.links())
+        {
+            Node from = findNode(link.from().name().toString());
+            Node to = findNode(link.to().name().toString());
+
+            Edge newEdge = new Edge(from, to);
+            edgeList.add(newEdge);
+            from.addEdge(newEdge);
+            to.parent = newEdge;
+        }
+
+        for (MutableNode node : convertGraph.nodes())
+        {
+            initEdges(node, edgeList);
+        }
+    }
+
+    private void initEdges(MutableNode mutableNode, ArrayList<Edge> edgeList)
+    {
+        for (Link link: mutableNode.links()) {
+            Node from = findNode(link.from().name().toString());
+            Node to = findNode(link.to().name().toString());
+
+            Edge newEdge = new Edge(from, to);
+            edgeList.add(newEdge);
+            from.addEdge(newEdge);
+            to.parent = newEdge;
+        }
     }
 
     public void addNode(String name)
@@ -58,15 +119,18 @@ public class Graph {
 
     private Node findNode(String label)
     {
-        ListIterator<Node> listIterator = nodes.listIterator();
-        while(listIterator.hasNext())
-        {
-            var next = listIterator.next();
-            System.out.println(next.label);
-            if(next.label.equals(label))
-            {
-                return next;
+        try {
+            ListIterator<Node> listIterator = nodes.listIterator();
+            while (listIterator.hasNext()) {
+                var next = listIterator.next();
+                System.out.println(next.label);
+                if (next.label.equals(label)) {
+                    return next;
+                }
             }
+        }
+        catch(Exception e){
+
         }
         throw new NodeNotFoundException("Node " + label + " not found!");
     }

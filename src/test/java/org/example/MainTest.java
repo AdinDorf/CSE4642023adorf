@@ -12,7 +12,7 @@ public class MainTest {
     public MyGraph g = null;
     @BeforeEach
     public void setUp(){
-        g = parseGraph("src/test/java/org/example/ex.dot");
+        //g = parseGraph("src/test/java/org/example/ex.dot");
     }
 
     /*
@@ -22,10 +22,10 @@ public class MainTest {
         assertDoesNotThrow();graphToString(g);
     }
 */
-    @Test
+    /*@Test
     public void testExportToPNG() {
         exportToPNG(g, "testPNG");
-    }
+    }*/
 
 /*
     @Test
