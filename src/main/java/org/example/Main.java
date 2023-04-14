@@ -4,9 +4,14 @@ package org.example;
 import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
 
+import guru.nidi.graphviz.model.Link;
+import guru.nidi.graphviz.model.MutableGraph;
 import guru.nidi.graphviz.model.MutableNode;
 import guru.nidi.graphviz.parse.Parser;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Scanner;
 import static guru.nidi.graphviz.model.Factory.*;
 
@@ -28,7 +33,6 @@ public class Main {
                     System.out.println("Enter a path: ");
                     input = scan.nextLine();
                     g = parseGraph(input);
-                    //g.toString();
                     break;
 
                 case "tostring":
@@ -38,11 +42,11 @@ public class Main {
                 case "outputGraph":
                     //outputGraph(file);
                     break;
-                /*case "toPNG":
+                case "toPNG":
                     System.out.println("Enter a name for the PNG. It will be saved to ./example/[name].png: ");
                     input = scan.nextLine();
                     exportToPNG(g,input);
-                    break;*/
+                    break;
                 case "addNode":
                     System.out.println("Enter a name for the new node");
                     input = scan.nextLine();
@@ -139,9 +143,10 @@ public class Main {
         return g;
     }
 
-/*
-    public static void exportToPNG(MyGraph g, String name) {
+
+    public static void exportToPNG(Graph graph, String name) {
         try {
+            MutableGraph g = graph.toMutableGraph();
             System.out.println("Exported graph " + name + " to png: ");
             Graphviz.fromGraph(g).width(700).render(Format.PNG).toFile(new File("example/"+name+".png"));
         }
@@ -151,7 +156,7 @@ public class Main {
            // e.printStackTrace();
         }
     }
-  */
+
 
     /*
 

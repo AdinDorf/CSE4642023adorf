@@ -9,6 +9,9 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
+import static guru.nidi.graphviz.model.Factory.mutGraph;
+import static guru.nidi.graphviz.model.Factory.mutNode;
+
 public class Graph {
     public ArrayList<Node> nodes;
     public ArrayList<Edge> edges;
@@ -26,6 +29,7 @@ public class Graph {
         this.edges = edges;
     }
 
+    //Constructor to create a Graph from a MutableGraph (albeit a bit sloppily)
     public Graph(MutableGraph graphToConvert) {
         //Snag all the Nodes, Edges, etc. from the MutableGraph and then tell it to (politely) fuck off <3
 
@@ -48,7 +52,26 @@ public class Graph {
         this.edges = edgeList;
     }
 
+    public MutableGraph toMutableGraph()
+    {
+        MutableGraph g = mutGraph("example1").setDirected(true);
 
+        for (Node n : nodes) {
+            g.add(mutNode(n.label));
+        }
+
+        System.out.println(g.toString());
+        for (MutableNode mnode : g.nodes()) {
+            for (Edge e : edges) {
+                if (mnode.name().toString().equals(e.from.label)) {
+                    mnode.addLink(e.to.label);
+                }
+            }
+        }
+        System.out.println(g.toString());
+
+        return g;
+    }
     private void initEdges(MutableGraph convertGraph, ArrayList<Edge> edgeList)
     {
         for (Link link : convertGraph.links())
@@ -123,7 +146,7 @@ public class Graph {
             ListIterator<Node> listIterator = nodes.listIterator();
             while (listIterator.hasNext()) {
                 var next = listIterator.next();
-                System.out.println(next.label);
+                //System.out.println(next.label);
                 if (next.label.equals(label)) {
                     return next;
                 }
