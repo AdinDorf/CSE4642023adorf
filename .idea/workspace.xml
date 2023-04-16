@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Refactor 2&#10;Reformatted dot parser to parse into a Graph to not have to deal with MutableGraph">
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Refactor commit 3:&#10;modified toPNG to use my new Graph.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Path.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -405,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681413225081</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Refactor commit 3:&#10;modified toPNG to use my new Graph.java">
+      <created>1681454906797</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1681454906797</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -420,7 +429,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Extended Mutable Graph with my own class" />
     <MESSAGE value="Added findNode helper function&#10;Added addEdge" />
     <MESSAGE value="Changed addNode to use findNode helper function" />
     <MESSAGE value="cleaned printmenu" />
@@ -445,7 +453,8 @@
     <MESSAGE value="Got rid of a test case to have a successful screenshot" />
     <MESSAGE value="Refactor 1:&#10;Create new Node.java and Graph.java&#10;Create new EdgeNotFoundException, NodeNotFoundException&#10;Attempting to remove reliance on ~~trash~~ package" />
     <MESSAGE value="Refactor 2&#10;Reformatted dot parser to parse into a Graph to not have to deal with MutableGraph" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor 2&#10;Reformatted dot parser to parse into a Graph to not have to deal with MutableGraph" />
+    <MESSAGE value="Refactor commit 3:&#10;modified toPNG to use my new Graph.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor commit 3:&#10;modified toPNG to use my new Graph.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -463,9 +472,9 @@
           <option name="timeStamp" value="15" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/MyGraph.java</url>
-          <line>255</line>
-          <option name="timeStamp" value="39" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Graph.java</url>
+          <line>200</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

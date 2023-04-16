@@ -75,7 +75,7 @@ public class Main {
                     g.removeEdge(t, input);
                     break;
 
-              /*  case "graphSearch":
+                  case "graphSearch":
                     System.out.println("Enter the source node name");
                     input = scan.nextLine();
                     var temp = input;
@@ -87,7 +87,7 @@ public class Main {
                     GraphSearch(temp, input, alg);
                     break;
 
-               */
+
             }
 
             printMenu();
@@ -149,6 +149,7 @@ public class Main {
             MutableGraph g = graph.toMutableGraph();
             System.out.println("Exported graph " + name + " to png: ");
             Graphviz.fromGraph(g).width(700).render(Format.PNG).toFile(new File("example/"+name+".png"));
+            g = null;
         }
         catch (Exception e)
         {
@@ -158,17 +159,17 @@ public class Main {
     }
 
 
-    /*
+
 
     public static void GraphSearch(String src, String dst, String alg)
     {
         Path p = new Path();
-        MyGraph.Algorithm a;
+        Graph.Algorithm a;
         if (alg.equals("bfs"))
         {
-            a = MyGraph.Algorithm.bfs;
+            a = Graph.Algorithm.bfs;
         } else if (alg.equals("dfs")) {
-            a = MyGraph.Algorithm.dfs;
+            a = Graph.Algorithm.dfs;
         }
         else{
             System.out.println("Please enter a valid algorithm (bfs or dfs)");
@@ -179,7 +180,7 @@ public class Main {
         System.out.print(p.toString());
     }
 
-*/
+
     /*
         public static void outputGraph(String filepath)
         {

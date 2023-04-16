@@ -1,13 +1,9 @@
 package org.example;
 
-import guru.nidi.graphviz.model.Link;
-import guru.nidi.graphviz.model.LinkSource;
-import guru.nidi.graphviz.model.MutableGraph;
-import guru.nidi.graphviz.model.MutableNode;
+import guru.nidi.graphviz.model.*;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.ListIterator;
+import java.util.*;
 
 import static guru.nidi.graphviz.model.Factory.mutGraph;
 import static guru.nidi.graphviz.model.Factory.mutNode;
@@ -17,6 +13,13 @@ public class Graph {
     public ArrayList<Edge> edges;
     private int size;
 
+
+    public enum Algorithm {
+        dfs,
+        bfs
+    }
+
+    Algorithm searchType;
 
     public Graph()
     {
@@ -54,13 +57,11 @@ public class Graph {
 
     public MutableGraph toMutableGraph()
     {
-        MutableGraph g = mutGraph("example1").setDirected(true);
 
+        MutableGraph g = mutGraph("example1").setDirected(true);
         for (Node n : nodes) {
             g.add(mutNode(n.label));
         }
-
-        System.out.println(g.toString());
         for (MutableNode mnode : g.nodes()) {
             for (Edge e : edges) {
                 if (mnode.name().toString().equals(e.from.label)) {
@@ -68,7 +69,6 @@ public class Graph {
                 }
             }
         }
-        System.out.println(g.toString());
 
         return g;
     }
@@ -139,8 +139,110 @@ public class Graph {
         throw new EdgeNotFoundException("Edge from " + source + " to " + dest + " not found!");
     }
 
+    public Path GraphSearch(Node src, Node dst, Algorithm alg)
+    {
 
-    private Node findNode(String label)
+        //set the current node to source
+        Node currentNode = src;
+
+        //Init an empty stack for dfs
+        Stack<Node> s =  new Stack<>();
+
+        //Init an empty queue for BFS
+        Queue<Node> q =  new LinkedList<>();
+
+        boolean empty = false;
+
+        //Init Dictionary to keep track of visited nodes
+        Dictionary<Node, Boolean> visited = new Hashtable<>();
+
+        //I don't think I need this because they're stored in each Node!
+        Dictionary<Node, Node> parents = new Hashtable<>();
+
+        //Init set all nodes to unvisited
+        for (Node node : nodes)
+        {
+            visited.put(node, false);
+        }
+
+        visited.put(currentNode, true);
+        if (alg == Algorithm.dfs)
+        {
+            s.add(currentNode);
+        }
+        else if (alg == Algorithm.bfs)
+        {
+            q.add(currentNode);
+        }
+        else {
+            Exception e = new RuntimeException("Search type somehow not set");
+        }
+
+        while (!empty)
+        {
+            if (alg == Algorithm.dfs) {
+                currentNode = s.pop();
+            }
+            else if (alg == Algorithm.bfs){
+                currentNode = q.remove();
+            }
+            else {
+                Exception e = new RuntimeException("Search type somehow not set");
+            }
+
+            //Check for the destination node
+            if (currentNode.equals(dst)) {
+                //traverse through the parent nodes
+                Path p = new Path();
+                p.add(currentNode);
+                Node parentNode = currentNode.parent.from;
+                while (!parentNode.equals(src)) {
+                    p.add(parentNode);
+                    parentNode = parentNode.parent.from;
+                }
+                p.add(src);
+                return p;
+            }
+
+            //for each edge attached to
+            for(Edge edge : currentNode.descendents)
+            {
+                Node newNode = edge.to;
+                if (!visited.get(newNode)) {
+                    visited.put(newNode, true);
+
+                    if (alg == Algorithm.dfs) {
+                        s.add(newNode);
+                    }
+                    else if (alg == Algorithm.bfs){
+                        q.add(newNode);
+                    }
+                    else {
+                        Exception e = new RuntimeException("Search type somehow not set");
+                    }
+                }
+
+
+            }
+
+            if (alg == Algorithm.dfs) {
+                empty = s.isEmpty();
+            }
+            else if (alg == Algorithm.bfs){
+                empty = q.isEmpty();
+            }
+            else {
+                Exception e = new RuntimeException("Search type somehow not set");
+            }
+
+        }
+
+
+
+        return null;
+    }
+
+    Node findNode(String label)
     {
         try {
             ListIterator<Node> listIterator = nodes.listIterator();

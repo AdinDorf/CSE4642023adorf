@@ -7,14 +7,12 @@ import java.util.LinkedList;
 
 public class Path {
 
-    private ArrayList<MutableNode> p = new ArrayList<MutableNode>();
+    private ArrayList<Node> p = new ArrayList<>();
 
     public Path()
-    {
+    {    }
 
-    }
-
-    public void add(MutableNode n)
+    public void add(Node n)
     {
         p.add(n);
     }
@@ -22,8 +20,8 @@ public class Path {
     @Override
     public String toString() {
         String s = new String();
-        for (MutableNode l : p) {
-            s += l.name().toString();
+        for (Node l : p) {
+            s += l.label;
             s+= " -> ";
         }
         s = s.substring(0, s.length()-3);
