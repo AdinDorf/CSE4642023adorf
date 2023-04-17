@@ -9,7 +9,7 @@ public class Node {
 
     public Node(String label)
     {
-        this(label, new ArrayList<Edge>(), null );
+        this(label, new ArrayList<>(), null );
     }
 
 

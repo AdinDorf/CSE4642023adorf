@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Refactor commit 5:&#10;Modified Path.java to include the traversal path, and added clarity to how the display text is displayed">
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Cleaned warnings">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Path.java" afterDir="false" />
     </list>
@@ -427,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681762301063</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Cleaned warnings">
+      <created>1681762593897</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1681762593897</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,7 +449,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cleaned printmenu" />
     <MESSAGE value="added addEdge" />
     <MESSAGE value="Updated AddEdge.&#10;Updated ex.dot to use &quot;gray&quot; instead of &quot;grey&quot; because svgsalamander doesn't accept the British spelling" />
     <MESSAGE value="Added RemoveEdge" />
@@ -467,7 +473,8 @@
     <MESSAGE value="Refactor commit 3:&#10;modified toPNG to use my new Graph.java" />
     <MESSAGE value="Refactor commit 4:&#10;Fixed Path and graphSearch" />
     <MESSAGE value="Refactor commit 5:&#10;Modified Path.java to include the traversal path, and added clarity to how the display text is displayed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor commit 5:&#10;Modified Path.java to include the traversal path, and added clarity to how the display text is displayed" />
+    <MESSAGE value="Cleaned warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned warnings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

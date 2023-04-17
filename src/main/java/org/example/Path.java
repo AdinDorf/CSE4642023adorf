@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class Path {
 
-    private ArrayList<Node> shortestPath = new ArrayList<>();
-    private ArrayList<Node> pathTraversed = new ArrayList<>();
+    private final ArrayList<Node> shortestPath = new ArrayList<>();
+    private final ArrayList<Node> pathTraversed = new ArrayList<>();
 
     public Path()
     {
@@ -24,7 +24,7 @@ public class Path {
 
     public String returnTraversal()
     {
-        String s = new String();
+        String s = "";
         for (Node l : pathTraversed) {
             s += l.label;
             s+= " -> ";
@@ -36,7 +36,7 @@ public class Path {
 
     @Override
     public String toString() {
-        String s = new String();
+        String s = "";
         for (Node l : shortestPath) {
             s += l.label;
             s+= " -> ";

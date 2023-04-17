@@ -7,19 +7,15 @@ import static guru.nidi.graphviz.model.Factory.mutNode;
 public class Graph {
     public ArrayList<Node> nodes;
     public ArrayList<Edge> edges;
-    private int size;
-
 
     public enum Algorithm {
         dfs,
         bfs
     }
 
-    Algorithm searchType;
-
     public Graph()
     {
-        this(new ArrayList<Node>(), new ArrayList<Edge>());
+        this(new ArrayList<>(), new ArrayList<>());
     }
 
     public Graph(ArrayList<Node> nodes, ArrayList<Edge> edges)
@@ -107,15 +103,9 @@ public class Graph {
 
     public void removeNode(String name)
     {
-        ListIterator<Node> listIterator = nodes.listIterator();
-
-        while(listIterator.hasNext())
-        {
-            if(listIterator.next().label == name)
-            {
-                listIterator.remove();
-            }
-        }
+        edges.removeIf(edge -> edge.from.label.equals(name));
+        edges.removeIf(edge -> edge.to.label.equals(name));
+        nodes.removeIf(node -> node.label.equals(name));
     }
 
     public void addEdge(String source, String dest)  {
