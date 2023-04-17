@@ -1,20 +1,10 @@
 package org.example;
-
-
 import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
-
-import guru.nidi.graphviz.model.Link;
 import guru.nidi.graphviz.model.MutableGraph;
-import guru.nidi.graphviz.model.MutableNode;
 import guru.nidi.graphviz.parse.Parser;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Scanner;
-import static guru.nidi.graphviz.model.Factory.*;
-
 public class Main {
     public static Graph g = null;
     public static void main(String[] args)  {

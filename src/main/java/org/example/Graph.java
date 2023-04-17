@@ -1,10 +1,6 @@
 package org.example;
-
 import guru.nidi.graphviz.model.*;
-
-import java.lang.reflect.Array;
 import java.util.*;
-
 import static guru.nidi.graphviz.model.Factory.mutGraph;
 import static guru.nidi.graphviz.model.Factory.mutNode;
 
@@ -209,7 +205,7 @@ public class Graph {
             }
 
             //for each edge attached to
-            for(Edge edge : currentNode.descendents)
+            for(Edge edge : currentNode.descendants)
             {
                 Node newNode = edge.to;
                 if (!visited.get(newNode)) {

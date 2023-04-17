@@ -1,10 +1,9 @@
 package org.example;
-
 import java.util.ArrayList;
 
 public class Node {
     public String label;
-    public ArrayList<Edge> descendents;
+    public ArrayList<Edge> descendants;
     public Edge parent;
 
 
@@ -16,13 +15,13 @@ public class Node {
 
     public Node(String label, ArrayList<Edge> edges, Edge parent) {
         this.label = label;
-        this.descendents = edges;
+        this.descendants = edges;
         this.parent = parent;
     }
 
     public void addEdge(Edge e)
     {
-        descendents.add(e);
+        descendants.add(e);
     }
 
 
