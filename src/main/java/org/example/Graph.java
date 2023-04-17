@@ -145,8 +145,6 @@ public class Graph {
         //Init Dictionary to keep track of visited nodes
         Dictionary<Node, Boolean> visited = new Hashtable<>();
 
-        //I don't think I need this because they're stored in each Node!
-        Dictionary<Node, Node> parents = new Hashtable<>();
 
         //Init set all nodes to unvisited
         for (Node node : nodes)
@@ -234,20 +232,13 @@ public class Graph {
 
     Node findNode(String label)
     {
-        try {
-            ListIterator<Node> listIterator = nodes.listIterator();
-            while (listIterator.hasNext()) {
-                var next = listIterator.next();
-                //System.out.println(next.label);
-                if (next.label.equals(label)) {
-                    return next;
-                }
+        for (Node next : nodes) {
+            //System.out.println(next.label);
+            if (next.label.equals(label)) {
+                return next;
             }
         }
-        catch(Exception e){
-
-        }
-        throw new NodeNotFoundException("Node " + label + " not found!");
+           throw new NodeNotFoundException("Node " + label + " not found!");
     }
 
 
