@@ -177,7 +177,8 @@ public class Main {
         }
 
         p = g.GraphSearch(g.findNode(src), g.findNode(dst), a);
-        System.out.print(p.toString());
+        System.out.println("Path determined by " + alg + ": " + p.toString());
+        System.out.println("Order of traversal: " + p.returnTraversal());
     }
 
 

@@ -151,6 +151,9 @@ public class Graph {
         //Init an empty queue for BFS
         Queue<Node> q =  new LinkedList<>();
 
+        //Init an empty node Path
+        Path p = new Path();
+
         boolean empty = false;
 
         //Init Dictionary to keep track of visited nodes
@@ -190,10 +193,11 @@ public class Graph {
                 Exception e = new RuntimeException("Search type somehow not set");
             }
 
+            p.logPath((currentNode));
+
             //Check for the destination node
             if (currentNode.equals(dst)) {
                 //traverse through the parent nodes
-                Path p = new Path();
                 p.add(currentNode);
                 Node parentNode = currentNode.parent.from;
                 while (!parentNode.equals(src)) {

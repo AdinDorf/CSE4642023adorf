@@ -1,26 +1,44 @@
 package org.example;
 
-import guru.nidi.graphviz.model.MutableNode;
-
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class Path {
 
-    private ArrayList<Node> p = new ArrayList<>();
+    private ArrayList<Node> shortestPath = new ArrayList<>();
+    private ArrayList<Node> pathTraversed = new ArrayList<>();
 
     public Path()
-    {    }
+    {
+
+    }
 
     public void add(Node n)
     {
-        p.add(n);
+        shortestPath.add(0,n);
     }
+
+    public void logPath(Node n)
+    {
+        pathTraversed.add(n);
+    }
+
+
+    public String returnTraversal()
+    {
+        String s = new String();
+        for (Node l : pathTraversed) {
+            s += l.label;
+            s+= " -> ";
+        }
+        s = s.substring(0, s.length()-3);
+        return s;
+    }
+
 
     @Override
     public String toString() {
         String s = new String();
-        for (Node l : p) {
+        for (Node l : shortestPath) {
             s += l.label;
             s+= " -> ";
         }
