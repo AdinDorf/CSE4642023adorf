@@ -7,12 +7,12 @@ import static guru.nidi.graphviz.model.Factory.mutNode;
 public class Graph {
     public ArrayList<Node> nodes;
     public ArrayList<Edge> edges;
-
+/*
     public enum Algorithm {
         dfs,
         bfs
     }
-
+*/
     public Graph()
     {
         this(new ArrayList<>(), new ArrayList<>());
@@ -125,109 +125,9 @@ public class Graph {
         throw new EdgeNotFoundException("Edge from " + source + " to " + dest + " not found!");
     }
 
-    public Path GraphSearch(Node src, Node dst, Algorithm alg)
+    public Path GraphSearch(Search search)
     {
-
-        //set the current node to source
-        Node currentNode = src;
-
-        //Init an empty stack for dfs
-        Stack<Node> s =  new Stack<>();
-
-        //Init an empty queue for BFS
-        Queue<Node> q =  new LinkedList<>();
-
-        //Init an empty node Path
-        Path p = new Path();
-
-        boolean empty = false;
-
-        //Init Dictionary to keep track of visited nodes
-        Dictionary<Node, Boolean> visited = new Hashtable<>();
-
-
-        //Init set all nodes to unvisited
-        for (Node node : nodes)
-        {
-            visited.put(node, false);
-        }
-
-        visited.put(currentNode, true);
-        if (alg == Algorithm.dfs)
-        {
-            s.add(currentNode);
-        }
-        else if (alg == Algorithm.bfs)
-        {
-            q.add(currentNode);
-        }
-        else {
-            Exception e = new RuntimeException("Search type somehow not set");
-        }
-
-        while (!empty)
-        {
-            if (alg == Algorithm.dfs) {
-                currentNode = s.pop();
-            }
-            else if (alg == Algorithm.bfs){
-                currentNode = q.remove();
-            }
-            else {
-                Exception e = new RuntimeException("Search type somehow not set");
-            }
-
-            p.logPath((currentNode));
-
-            //Check for the destination node
-            if (currentNode.equals(dst)) {
-                //traverse through the parent nodes
-                p.add(currentNode);
-                Node parentNode = currentNode.parent.from;
-                while (!parentNode.equals(src)) {
-                    p.add(parentNode);
-                    parentNode = parentNode.parent.from;
-                }
-                p.add(src);
-                return p;
-            }
-
-            //for each edge attached to
-            for(Edge edge : currentNode.descendants)
-            {
-                Node newNode = edge.to;
-                if (!visited.get(newNode)) {
-                    visited.put(newNode, true);
-
-                    if (alg == Algorithm.dfs) {
-                        s.add(newNode);
-                    }
-                    else if (alg == Algorithm.bfs){
-                        q.add(newNode);
-                    }
-                    else {
-                        Exception e = new RuntimeException("Search type somehow not set");
-                    }
-                }
-
-
-            }
-
-            if (alg == Algorithm.dfs) {
-                empty = s.isEmpty();
-            }
-            else if (alg == Algorithm.bfs){
-                empty = q.isEmpty();
-            }
-            else {
-                Exception e = new RuntimeException("Search type somehow not set");
-            }
-
-        }
-
-
-
-        return null;
+        return search.runSearch();
     }
 
     Node findNode(String label)

@@ -154,19 +154,19 @@ public class Main {
     public static void GraphSearch(String src, String dst, String alg)
     {
         Path p = new Path();
-        Graph.Algorithm a;
+        Search search;
         if (alg.equals("bfs"))
         {
-            a = Graph.Algorithm.bfs;
+            search = new BFS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
         } else if (alg.equals("dfs")) {
-            a = Graph.Algorithm.dfs;
+            search = new DFS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
         }
         else{
             System.out.println("Please enter a valid algorithm (bfs or dfs)");
             return;
         }
 
-        p = g.GraphSearch(g.findNode(src), g.findNode(dst), a);
+        p = g.GraphSearch(search);
         System.out.println("Path determined by " + alg + ": " + p.toString());
         System.out.println("Order of traversal: " + p.returnTraversal());
     }
