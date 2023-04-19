@@ -160,6 +160,8 @@ public class Main {
             search = new BFS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
         } else if (alg.equals("dfs")) {
             search = new DFS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
+        } else if (alg.equals("rand")){
+            search = new RandomWalkSearch(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
         }
         else{
             System.out.println("Please enter a valid algorithm (bfs or dfs)");
@@ -170,26 +172,4 @@ public class Main {
         System.out.println("Path determined by " + alg + ": " + p.toString());
         System.out.println("Order of traversal: " + p.returnTraversal());
     }
-
-
-    /*
-        public static void outputGraph(String filepath)
-        {
-            //output the contents of g into a text file
-            try {
-                FileWriter fw = new FileWriter(filepath);
-                fw.write("hello");
-                fw.close();
-                System.out.println("Printed toString to file at: " + filepath);
-            }
-            catch (IOException e) {
-                System.out.println("Error writing to file");
-                e.printStackTrace();
-            }
-        }
-    */
-
-
-
-
 }

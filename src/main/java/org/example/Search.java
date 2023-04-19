@@ -39,33 +39,35 @@ abstract class Search {
 
     Path runSearch()
     {
+        //Set all nodes to unvisited
         initVisited();
+        //Put the first node in the sata structure
         inputNode(currentNode);
         do
         {
+            //Take out the top node of the data structure
             currentNode = removeNode();
+            if (currentNode == null)
+            {
+                currentNode = src;
+            }
+            //Add the node to the path log
             p.logPath(currentNode);
             //Check for the destination node
+
             if (currentNode.equals(dst)) {
                 return checkPath();
             }
+            //Input nodes attached to the current node
             inputDescendants();
+
         } while (currentNode != null);
         throw new NodeNotFoundException("Node " + dst.label + " not found!");
 
 
     }
 
-    private void inputDescendants() {
-        for (Edge edge : currentNode.descendants)
-        {
-            Node newNode = edge.to;
-            if (!visited.get(newNode)) {
-                visited.put(newNode, true);
-                inputNode(newNode);
-            }
-        }
-    }
+    abstract void inputDescendants();
 
     abstract Node removeNode();
     abstract void inputNode(Node n);

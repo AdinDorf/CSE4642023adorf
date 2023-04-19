@@ -3,12 +3,14 @@ package org.example;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 
-public class BFS extends Search{
+public class RandomWalkSearch extends Search{
 
     //Init an empty queue for BFS
     Queue<Node> q;
-    BFS(Node src, Node dst, ArrayList<Node> nodes, ArrayList<Edge> edges) {
+    static Random rand = new Random();
+    RandomWalkSearch(Node src, Node dst, ArrayList<Node> nodes, ArrayList<Edge> edges) {
         super(src, dst, nodes, edges);
         q = new LinkedList<>();
     }
@@ -32,6 +34,7 @@ public class BFS extends Search{
     @Override
     void inputDescendants()
     {
+        /*
         for (Edge edge : currentNode.descendants)
         {
             Node newNode = edge.to;
@@ -39,7 +42,20 @@ public class BFS extends Search{
                 visited.put(newNode, true);
                 inputNode(newNode);
             }
+        }*/
+
+        if (!currentNode.descendants.isEmpty()) {
+            int randInt = rand.nextInt(currentNode.descendants.size());
+            Node newNode = currentNode.descendants.get(randInt).to;
+
+            visited.put(newNode, true);
+            inputNode(newNode);
+
+        }
+        else {
+            currentNode = src;
         }
     }
+
 
 }

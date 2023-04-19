@@ -28,4 +28,16 @@ public class DFS extends Search{
         s.add(n);
     }
 
+    @Override
+    void inputDescendants()
+    {
+        for (Edge edge : currentNode.descendants)
+        {
+            Node newNode = edge.to;
+            if (!visited.get(newNode)) {
+                visited.put(newNode, true);
+                inputNode(newNode);
+            }
+        }
+    }
 }
