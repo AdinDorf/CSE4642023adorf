@@ -1,10 +1,11 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-abstract class Search {
+public class Search {
     Node currentNode;
     final Node src;
     final Node dst;
@@ -18,13 +19,24 @@ abstract class Search {
     final ArrayList<Node> nodes;
     final ArrayList<Edge> edges;
 
-    Search(Node src, Node dst, ArrayList<Node> nodes, ArrayList<Edge> edges) {
+    //For the strategy design pattern,
+    AddBehavior addBehavior;
+    RemoveBehavior removeBehavior;
+    WalkBehavior walkBehavior;
+    InitBehavior initBehavior;
+    Collection<Node> nodeCollection;
+
+    Search(Node src, Node dst, ArrayList<Node> nodes, ArrayList<Edge> edges, AddBehavior addBehavior, RemoveBehavior  removeBehavior, WalkBehavior walkBehavior, InitBehavior initBehavior) {
         this.src = src;
         this.dst = dst;
         this.nodes = nodes;
         this.edges = edges;
         p = new Path();
         visited = new Hashtable<>();
+        this.addBehavior = addBehavior;
+        this.removeBehavior = removeBehavior;
+        this.walkBehavior = walkBehavior;
+        this.initBehavior = initBehavior;
     }
 
     void initVisited()
@@ -39,6 +51,7 @@ abstract class Search {
 
     Path runSearch()
     {
+        initData();
         //Set all nodes to unvisited
         initVisited();
         //Put the first node in the sata structure
@@ -67,10 +80,24 @@ abstract class Search {
 
     }
 
-    abstract void walk();
+    void initData()
+    {
+        nodeCollection = initBehavior.initData();
+    }
 
-    abstract Node removeNode();
-    abstract void inputNode(Node n);
+    void walk()
+    {
+        walkBehavior.walk(nodeCollection, visited, currentNode, addBehavior);
+    }
+
+    Node removeNode()
+    {
+        return removeBehavior.removeNode(nodeCollection);
+    }
+    void inputNode(Node n)
+    {
+        addBehavior.addNode(nodeCollection, n);
+    }
     private Path checkPath()
     {
         //traverse through the parent nodes
