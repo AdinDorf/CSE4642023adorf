@@ -71,7 +71,7 @@ public class Main {
                     var temp = input;
                     System.out.println("Enter the destination node name");
                     input = scan.nextLine();
-                    System.out.println("Enter the search algorithm to use (bfs or dfs)");
+                    System.out.println("Enter the search algorithm to use (bfs, dfs, rand)");
                     var alg = scan.nextLine();
 
                     GraphSearch(temp, input, alg);
@@ -160,8 +160,7 @@ public class Main {
         } else if (alg.equals("dfs")) {
             search = new Search(g.findNode(src), g.findNode(dst), g.nodes, g.edges, new DFSAddNode(), new DFSRemoveNode(), new DFSWalk(), new DFSInit());
         } else if (alg.equals("rand")){
-           // search = new RandomWalkSearch(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
-            search = null;
+            search = new Search(g.findNode(src), g.findNode(dst), g.nodes, g.edges, new RandWalkAddNode(), new RandWalkRemoveNode(), new RandWalkWalk(), new RandWalkInit());
         }
         else{
             System.out.println("Please enter a valid algorithm (bfs or dfs)");

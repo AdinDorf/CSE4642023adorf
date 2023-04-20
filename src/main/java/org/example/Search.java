@@ -73,6 +73,10 @@ public class Search {
             }
             //Input nodes attached to the current node
             walk();
+            if (currentNode == null)
+            {
+                currentNode=src;
+            }
 
         } while (currentNode != null);
         throw new NodeNotFoundException("Node " + dst.label + " not found!");
