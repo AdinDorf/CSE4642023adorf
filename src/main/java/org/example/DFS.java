@@ -29,7 +29,7 @@ public class DFS extends Search{
     }
 
     @Override
-    void inputDescendants()
+    void walk()
     {
         for (Edge edge : currentNode.descendants)
         {

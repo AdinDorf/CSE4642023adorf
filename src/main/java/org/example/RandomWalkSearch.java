@@ -32,7 +32,7 @@ public class RandomWalkSearch extends Search{
     }
 
     @Override
-    void inputDescendants()
+    void walk()
     {
         /*
         for (Edge edge : currentNode.descendants)

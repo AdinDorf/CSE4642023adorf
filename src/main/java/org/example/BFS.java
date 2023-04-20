@@ -30,7 +30,7 @@ public class BFS extends Search{
     }
 
     @Override
-    void inputDescendants()
+    void walk()
     {
         for (Edge edge : currentNode.descendants)
         {

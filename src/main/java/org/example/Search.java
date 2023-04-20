@@ -59,7 +59,7 @@ abstract class Search {
                 return checkPath();
             }
             //Input nodes attached to the current node
-            inputDescendants();
+            walk();
 
         } while (currentNode != null);
         throw new NodeNotFoundException("Node " + dst.label + " not found!");
@@ -67,7 +67,7 @@ abstract class Search {
 
     }
 
-    abstract void inputDescendants();
+    abstract void walk();
 
     abstract Node removeNode();
     abstract void inputNode(Node n);
