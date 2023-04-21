@@ -42,12 +42,21 @@ public class Main {
                     input = scan.nextLine();
                     g.addNode(input);
                     break;
+                case "addNodes":
+                    System.out.println("Enter the names for the new nodes separated by commas");
+                    input = scan.nextLine();
+                    g.addNodes(input.replaceAll(" ", "").split(","));
+                    break;
                 case "removeNode":
                     System.out.println("Enter which node should be removed");
                     input = scan.nextLine();
                     g.removeNode(input);
                     break;
-
+                case "removeNodes":
+                    System.out.println("Enter the names for the new nodes separated by commas");
+                    input = scan.nextLine();
+                    g.removeNodes(input.replaceAll(" ", "").split(","));
+                    break;
                 case "addEdge":
                     System.out.println("Enter which nodes to connect");
                     input = scan.nextLine();
@@ -163,7 +172,7 @@ public class Main {
             search = new Search(g.findNode(src), g.findNode(dst), g.nodes, g.edges, new RandWalkAddNode(), new RandWalkRemoveNode(), new RandWalkWalk(), new RandWalkInit());
         }
         else{
-            System.out.println("Please enter a valid algorithm (bfs or dfs)");
+            System.out.println("Please enter a valid algorithm (bfs, dfs, or rand)");
             return;
         }
 

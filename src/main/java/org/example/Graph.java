@@ -101,11 +101,25 @@ public class Graph {
         nodes.add(new Node(name));
     }
 
+    public void addNodes(String[] names)
+    {
+        for (String name: names) {
+            addNode(name);
+        }
+    }
+
     public void removeNode(String name)
     {
         edges.removeIf(edge -> edge.from.label.equals(name));
         edges.removeIf(edge -> edge.to.label.equals(name));
         nodes.removeIf(node -> node.label.equals(name));
+    }
+
+    public void removeNodes(String[] names)
+    {
+        for (String name : names) {
+            removeNode(name);
+        }
     }
 
     public void addEdge(String source, String dest)  {
