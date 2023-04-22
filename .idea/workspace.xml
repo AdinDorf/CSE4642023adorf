@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Removed dead code, fixed test cases in MainTest.java">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Modified maven.yml, added debug print">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
     </list>
@@ -528,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682126654987</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Modified maven.yml, added debug print">
+      <created>1682126995399</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1682126995399</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -567,7 +573,8 @@
     <MESSAGE value="Cleaned UI, rewrote addNodes/removeNodes" />
     <MESSAGE value="Fixed a really stupid thing I did by re-implementing BFS, DFS, and a new RWS, which are each now subclasses of Search.java" />
     <MESSAGE value="Removed dead code, fixed test cases in MainTest.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed dead code, fixed test cases in MainTest.java" />
+    <MESSAGE value="Modified maven.yml, added debug print" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified maven.yml, added debug print" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

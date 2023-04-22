@@ -8,45 +8,46 @@ import static org.example.Main.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
-    public Graph g;
+    Graph testgraph;
     @BeforeEach
     public void setUp(){
-        System.out.println("Running test setup code...");
-        g = parseGraph("src/test/java/org/example/test3.dot");
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
     }
 
 
     @Test
     @DisplayName("Ensure toString outputs correctly")
     public void testGraphToString() {
-        g.toString();
+      //  g = parseGraph("src/test/java/org/example/test3.dot");
+        testgraph.toString();
     }
 
     @Test
     public void testExportToPNG() {
-        assertDoesNotThrow(() -> exportToPNG(g, "testPNG"));
+       // g = parseGraph("src/test/java/org/example/test3.dot");
+        assertDoesNotThrow(() -> exportToPNG(testgraph, "testPNG"));
     }
 
 
     @Test
     @DisplayName("Test addNode")
     public void testAddNode() {
-        g.addNode("new");
-        assertDoesNotThrow(() -> g.findNode("new"));
+        testgraph.addNode("new");
+        assertDoesNotThrow(() -> testgraph.findNode("new"));
     }
     @Test
     public void testAddExistingNode() {
-       assertDoesNotThrow(() -> g.addNode("a"));
+       assertDoesNotThrow(() -> testgraph.addNode("a"));
     }
 
     @Test
     public void removeNode() {
-       assertDoesNotThrow(() -> g.removeNode("a"));
+       assertDoesNotThrow(() -> testgraph.removeNode("a"));
     }
 
     @Test
     public void removeNodeFail()
     {
-        assertDoesNotThrow(() -> g.removeNode("DNE"));
+        assertDoesNotThrow(() -> testgraph.removeNode("DNE"));
     }
 }
