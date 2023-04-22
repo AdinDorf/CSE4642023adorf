@@ -26,6 +26,7 @@ public class Main {
                     break;
 
                 case "tostring":
+                    assert g != null;
                     g.toString();
                     break;
 
@@ -58,9 +59,10 @@ public class Main {
                     g.removeNodes(input.replaceAll(" ", "").split(","));
                     break;
                 case "addEdge":
-                    System.out.println("Enter which nodes to connect");
+                    System.out.println("Enter the source node: ");
                     input = scan.nextLine();
                     var tempInput = input;
+                    System.out.println("Enter the destination node: ");
                     input = scan.nextLine();
                     g.addEdge(tempInput, input);
                     System.out.println("Successfully added node: " + input);

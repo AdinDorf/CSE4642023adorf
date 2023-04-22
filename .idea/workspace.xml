@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="I think I fixed the stupid">
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Trying to parse a graph every test now">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BFSWalk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BFSWalk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DFSWalk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DFSWalk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +96,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="CSE4642023adorf" />
@@ -189,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676583715866</updated>
-    </task>
-    <task id="LOCAL-00002" summary="added dot to png parser">
-      <created>1676587006907</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1676587006907</updated>
     </task>
     <task id="LOCAL-00003" summary="reworked program to not have cli">
       <created>1676671529020</created>
@@ -533,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682127265087</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Trying to parse a graph every test now">
+      <created>1682127493891</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1682127493891</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge DFS into Main" />
     <MESSAGE value="Added an enum Search to set the type of graphsearch to use" />
     <MESSAGE value="Modied GraphSearch to take an Algorithm as input" />
     <MESSAGE value="Made test classes public" />
@@ -573,7 +576,8 @@
     <MESSAGE value="Removed dead code, fixed test cases in MainTest.java" />
     <MESSAGE value="Modified maven.yml, added debug print" />
     <MESSAGE value="I think I fixed the stupid" />
-    <option name="LAST_COMMIT_MESSAGE" value="I think I fixed the stupid" />
+    <MESSAGE value="Trying to parse a graph every test now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to parse a graph every test now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,6 +594,11 @@
           <properties class="java.lang.ClassCastException" package="java.lang" />
           <option name="timeStamp" value="15" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>166</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

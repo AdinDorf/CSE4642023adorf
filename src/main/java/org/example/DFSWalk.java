@@ -11,6 +11,7 @@ public class DFSWalk implements WalkBehavior{
             Node newNode = edge.to;
             if (!visited.get(newNode)) {
                 visited.put(newNode, true);
+                newNode.parent = edge;
                 addBehavior.addNode(collection, newNode);
             }
         }
