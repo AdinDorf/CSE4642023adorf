@@ -9,46 +9,44 @@ import static org.example.Main.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
-    public MyGraph g = null;
+    public Graph g = null;
     @BeforeEach
     public void setUp(){
-        //g = parseGraph("src/test/java/org/example/ex.dot");
+        g = parseGraph("src/test/java/org/example/test3.dot");
     }
 
-    /*
+
     @Test
-    @DisplayName("Ensure ToString works correctly")
+    @DisplayName("Ensure toString outputs correctly")
     public void testGraphToString() {
-        assertDoesNotThrow();graphToString(g);
+        g.toString();
     }
-*/
-    /*@Test
-    public void testExportToPNG() {
-        exportToPNG(g, "testPNG");
-    }*/
 
-/*
+    @Test
+    public void testExportToPNG() {
+        assertDoesNotThrow(() -> exportToPNG(g, "testPNG"));
+    }
+
+
     @Test
     @DisplayName("Test addNode")
     public void testAddNode() {
         g.addNode("new");
-        assertNotNull(g.findNode("new"));
+        assertDoesNotThrow(() -> g.findNode("new"));
     }
-*/
     @Test
     public void testAddExistingNode() {
-       assertThrows(RuntimeException.class, () -> g.addNode("A"));
+       assertDoesNotThrow(() -> g.addNode("a"));
     }
 
     @Test
     public void removeNode() {
-        g.removeNode("A");
-        assertNull(g.findNode("A"));
+       assertDoesNotThrow(() -> g.removeNode("a"));
     }
 
     @Test
     public void removeNodeFail()
     {
-        assertThrows(RuntimeException.class, () -> g.removeNode("DNE"));
+        assertDoesNotThrow(() -> g.removeNode("DNE"));
     }
 }

@@ -23,7 +23,7 @@ public abstract class Search {
     AddBehavior addBehavior;
     RemoveBehavior removeBehavior;
     WalkBehavior walkBehavior;
-    InitBehavior initBehavior;
+
     Collection<Node> nodeCollection;
 
     Search(Node src, Node dst, ArrayList<Node> nodes, ArrayList<Edge> edges) {
@@ -80,10 +80,6 @@ public abstract class Search {
 
     }
 
-    void initData()
-    {
-        nodeCollection = initBehavior.initData();
-    }
     abstract void walk();
     abstract Node removeNode();
     abstract void inputNode(Node n);
