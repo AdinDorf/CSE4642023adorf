@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Fixed a really stupid thing I did by re-implementing BFS, DFS, and a new RWS, which are each now subclasses of Search.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/testPNG.png" beforeDir="false" afterPath="$PROJECT_DIR$/example/testPNG.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BFSInit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DFSInit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InitBehavior.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RandWalkInit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Search.java" afterDir="false" />
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Help">
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -519,7 +512,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682121610741</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Removed dead code, fixed test cases in MainTest.java">
+      <created>1682125569229</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1682125569229</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Help">
+      <created>1682126294328</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1682126294328</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -534,8 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Clear Warnings" />
-    <MESSAGE value="Added Path.java&#10;Messed around with subgraphs and bfs" />
     <MESSAGE value="Completed GraphSearch!" />
     <MESSAGE value="Merge DFS into Main" />
     <MESSAGE value="Added an enum Search to set the type of graphsearch to use" />
@@ -559,7 +564,9 @@
     <MESSAGE value="Implemented random walk search with the strategy design pattern" />
     <MESSAGE value="Cleaned UI, rewrote addNodes/removeNodes" />
     <MESSAGE value="Fixed a really stupid thing I did by re-implementing BFS, DFS, and a new RWS, which are each now subclasses of Search.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a really stupid thing I did by re-implementing BFS, DFS, and a new RWS, which are each now subclasses of Search.java" />
+    <MESSAGE value="Removed dead code, fixed test cases in MainTest.java" />
+    <MESSAGE value="Help" />
+    <option name="LAST_COMMIT_MESSAGE" value="Help" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

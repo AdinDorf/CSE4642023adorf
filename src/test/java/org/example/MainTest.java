@@ -1,6 +1,5 @@
 package org.example;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,7 +8,7 @@ import static org.example.Main.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
-    public Graph g = null;
+    public Graph g;
     @BeforeEach
     public void setUp(){
         g = parseGraph("src/test/java/org/example/test3.dot");
