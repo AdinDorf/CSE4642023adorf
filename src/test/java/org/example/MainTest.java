@@ -18,13 +18,13 @@ public class MainTest {
     @Test
     @DisplayName("Ensure toString outputs correctly")
     public void testGraphToString() {
-      //  g = parseGraph("src/test/java/org/example/test3.dot");
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
         testgraph.toString();
     }
 
     @Test
     public void testExportToPNG() {
-       // g = parseGraph("src/test/java/org/example/test3.dot");
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
         assertDoesNotThrow(() -> exportToPNG(testgraph, "testPNG"));
     }
 
@@ -37,12 +37,14 @@ public class MainTest {
     }
     @Test
     public void testAddExistingNode() {
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
        assertDoesNotThrow(() -> testgraph.addNode("a"));
     }
 
     @Test
     public void removeNode() {
-       assertDoesNotThrow(() -> testgraph.removeNode("a"));
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
+        assertDoesNotThrow(() -> testgraph.removeNode("a"));
     }
 
     @Test

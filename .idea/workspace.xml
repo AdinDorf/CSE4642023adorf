@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Modified maven.yml, added debug print">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="I think I fixed the stupid">
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,13 +189,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676583715866</updated>
-    </task>
-    <task id="LOCAL-00001" summary="initial commit">
-      <created>1676584896405</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1676584896405</updated>
     </task>
     <task id="LOCAL-00002" summary="added dot to png parser">
       <created>1676587006907</created>
@@ -534,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682126995399</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="I think I fixed the stupid">
+      <created>1682127265087</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1682127265087</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +548,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Completed GraphSearch!" />
     <MESSAGE value="Merge DFS into Main" />
     <MESSAGE value="Added an enum Search to set the type of graphsearch to use" />
     <MESSAGE value="Modied GraphSearch to take an Algorithm as input" />
@@ -574,7 +572,8 @@
     <MESSAGE value="Fixed a really stupid thing I did by re-implementing BFS, DFS, and a new RWS, which are each now subclasses of Search.java" />
     <MESSAGE value="Removed dead code, fixed test cases in MainTest.java" />
     <MESSAGE value="Modified maven.yml, added debug print" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified maven.yml, added debug print" />
+    <MESSAGE value="I think I fixed the stupid" />
+    <option name="LAST_COMMIT_MESSAGE" value="I think I fixed the stupid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
