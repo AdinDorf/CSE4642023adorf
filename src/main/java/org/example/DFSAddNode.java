@@ -11,7 +11,7 @@ public class DFSAddNode implements AddBehavior{
             ((Stack<Node>)collection).add(node);
         }
         else {
-            throw new IllegalArgumentException("Queue not passed into BFS. This should not happen");
+            throw new IllegalArgumentException("Stack not passed into DFS. This should not happen");
         }
     }
 }

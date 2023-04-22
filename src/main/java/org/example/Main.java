@@ -165,11 +165,11 @@ public class Main {
         Path p = new Path();
         Search search;
         if (alg.equals("bfs")) {
-            search = new Search(g.findNode(src), g.findNode(dst), g.nodes, g.edges, new BFSAddNode(), new BFSRemoveNode(), new BFSWalk(), new BFSInit());
+            search = new BFS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
         } else if (alg.equals("dfs")) {
-            search = new Search(g.findNode(src), g.findNode(dst), g.nodes, g.edges, new DFSAddNode(), new DFSRemoveNode(), new DFSWalk(), new DFSInit());
+            search = new DFS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
         } else if (alg.equals("rand")){
-            search = new Search(g.findNode(src), g.findNode(dst), g.nodes, g.edges, new RandWalkAddNode(), new RandWalkRemoveNode(), new RandWalkWalk(), new RandWalkInit());
+            search = new RWS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
         }
         else{
             System.out.println("Please enter a valid algorithm (bfs, dfs, or rand)");

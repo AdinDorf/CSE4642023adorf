@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-public class Search {
+public abstract class Search {
     Node currentNode;
     final Node src;
     final Node dst;
@@ -26,17 +26,13 @@ public class Search {
     InitBehavior initBehavior;
     Collection<Node> nodeCollection;
 
-    Search(Node src, Node dst, ArrayList<Node> nodes, ArrayList<Edge> edges, AddBehavior addBehavior, RemoveBehavior  removeBehavior, WalkBehavior walkBehavior, InitBehavior initBehavior) {
+    Search(Node src, Node dst, ArrayList<Node> nodes, ArrayList<Edge> edges) {
         this.src = src;
         this.dst = dst;
         this.nodes = nodes;
         this.edges = edges;
         p = new Path();
         visited = new Hashtable<>();
-        this.addBehavior = addBehavior;
-        this.removeBehavior = removeBehavior;
-        this.walkBehavior = walkBehavior;
-        this.initBehavior = initBehavior;
     }
 
     void initVisited()
@@ -51,7 +47,7 @@ public class Search {
 
     Path runSearch()
     {
-        initData();
+       // initData();
         //Set all nodes to unvisited
         initVisited();
         //Put the first node in the sata structure
@@ -88,20 +84,9 @@ public class Search {
     {
         nodeCollection = initBehavior.initData();
     }
-
-    void walk()
-    {
-        walkBehavior.walk(nodeCollection, visited, currentNode, addBehavior);
-    }
-
-    Node removeNode()
-    {
-        return removeBehavior.removeNode(nodeCollection);
-    }
-    void inputNode(Node n)
-    {
-        addBehavior.addNode(nodeCollection, n);
-    }
+    abstract void walk();
+    abstract Node removeNode();
+    abstract void inputNode(Node n);
     private Path checkPath()
     {
         //traverse through the parent nodes
