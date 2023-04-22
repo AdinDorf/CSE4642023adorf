@@ -11,6 +11,7 @@ public class MainTest {
     public Graph g;
     @BeforeEach
     public void setUp(){
+        System.out.println("Running test setup code...");
         g = parseGraph("src/test/java/org/example/test3.dot");
     }
 
