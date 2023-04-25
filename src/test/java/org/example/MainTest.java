@@ -9,11 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
     Graph testgraph;
+    /*
     @BeforeEach
     public void setUp(){
         testgraph = parseGraph("src/test/java/org/example/test3.dot");
     }
-
+    */
 
     @Test
     @DisplayName("Ensure toString outputs correctly")
@@ -32,11 +33,13 @@ public class MainTest {
     @Test
     @DisplayName("Test addNode")
     public void testAddNode() {
-        testgraph.addNode("new");
-        assertDoesNotThrow(() -> testgraph.findNode("new"));
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
+        testgraph.addNode("newTestNode");
+        assertDoesNotThrow(() -> testgraph.findNode("newTestNode"));
     }
     @Test
     public void testAddExistingNode() {
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
         testgraph = parseGraph("src/test/java/org/example/test3.dot");
        assertDoesNotThrow(() -> testgraph.addNode("a"));
     }
