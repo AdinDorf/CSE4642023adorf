@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Added an enum Search to set the type of graphsearch to use">
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Added readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyGraph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -25,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="refactor" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,10 +54,10 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="2Lq1HbixRffeXplS3ZP1ET3eFA1" />
@@ -72,6 +73,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -79,8 +81,14 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\adin\IdeaProjects\CSE464adorf\src" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.example" />
@@ -136,6 +144,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainTest.removeNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE4642023adorf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
+      <option name="METHOD_NAME" value="removeNode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainTest.testGraphToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSE4642023adorf" />
       <extension name="coverage">
@@ -154,6 +178,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MainTest.removeNode" />
         <item itemvalue="JUnit.MainTest.testGraphToString" />
         <item itemvalue="JUnit.MainTest.graphToString (1)" />
         <item itemvalue="JUnit.MainTest.testGraphToString" />
@@ -169,34 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676583715866</updated>
-    </task>
-    <task id="LOCAL-00001" summary="initial commit">
-      <created>1676584896405</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1676584896405</updated>
-    </task>
-    <task id="LOCAL-00002" summary="added dot to png parser">
-      <created>1676587006907</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1676587006907</updated>
-    </task>
-    <task id="LOCAL-00003" summary="reworked program to not have cli">
-      <created>1676671529020</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1676671529020</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added tostring">
-      <created>1676674013481</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1676674013481</updated>
     </task>
     <task id="LOCAL-00005" summary="Cleaned up output">
       <created>1676674315294</created>
@@ -345,7 +342,203 @@
       <option name="project" value="LOCAL" />
       <updated>1680068592674</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Modied GraphSearch to take an Algorithm as input">
+      <created>1680069692929</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1680069692929</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Made test classes public">
+      <created>1680071007724</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680071007724</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Reverted me doing a stupid and changing the example file">
+      <created>1680071265257</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680071265257</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Made mygraph g public">
+      <created>1680071690721</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1680071690721</updated>
+    </task>
+    <task id="LOCAL-00030" summary="&quot;Fixed&quot; some test cases that were failing">
+      <created>1680072088364</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1680072088364</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Got rid of a test case to have a successful screenshot">
+      <created>1680072711398</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1680072711398</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Refactor 1:&#10;Create new Node.java and Graph.java&#10;Create new EdgeNotFoundException, NodeNotFoundException&#10;Attempting to remove reliance on ~~trash~~ package">
+      <created>1681194899015</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1681194899015</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Refactor 2&#10;Reformatted dot parser to parse into a Graph to not have to deal with MutableGraph">
+      <created>1681413225081</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1681413225081</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Refactor commit 3:&#10;modified toPNG to use my new Graph.java">
+      <created>1681454906797</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1681454906797</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Refactor commit 4:&#10;Fixed Path and graphSearch">
+      <created>1681684132918</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1681684132918</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Refactor commit 5:&#10;Modified Path.java to include the traversal path, and added clarity to how the display text is displayed">
+      <created>1681762301063</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1681762301063</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Cleaned warnings">
+      <created>1681762593897</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1681762593897</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Cleaned warnings">
+      <created>1681763322686</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1681763322686</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Cleaned lots of warnings">
+      <created>1681763455788</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1681763455788</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Implemented the Template design pattern">
+      <created>1681800383336</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1681800383336</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Implemented the Template design pattern for RandomWalkSearch">
+      <created>1681878909093</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1681878909093</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Created new branch for strategy design pattern.&#10;Renamed checkDescendants to walk for readability (refactor)">
+      <created>1681961515051</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1681961515051</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Committed war crimes in my code to implement the strategy pattern for DFS and BFS">
+      <created>1681968400129</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1681968400129</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Implemented random walk search with the strategy design pattern">
+      <created>1681972160131</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1681972160131</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Cleaned UI, rewrote addNodes/removeNodes">
+      <created>1682118119602</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1682118119602</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Fixed a really stupid thing I did by re-implementing BFS, DFS, and a new RWS, which are each now subclasses of Search.java">
+      <created>1682121610740</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1682121610741</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Removed dead code, fixed test cases in MainTest.java">
+      <created>1682125569229</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1682125569229</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Trying a thing to hopefully fix test cases">
+      <created>1682126654987</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1682126654987</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Modified maven.yml, added debug print">
+      <created>1682126995399</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1682126995399</updated>
+    </task>
+    <task id="LOCAL-00050" summary="I think I fixed the stupid">
+      <created>1682127265087</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1682127265087</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Trying to parse a graph every test now">
+      <created>1682127493891</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1682127493891</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Modified BFSWalk and DFSWalk to properly set node parents for ensured optimal pathfinding">
+      <created>1682137130022</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1682137130022</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Added readme">
+      <created>1682138095961</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1682138095961</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -360,31 +553,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="added dot to png parser" />
-    <MESSAGE value="tostirng" />
-    <MESSAGE value="reworked program to not have cli" />
-    <MESSAGE value="Added tostring" />
-    <MESSAGE value="Cleaned up output" />
-    <MESSAGE value="Added Add Node, cleaned up code" />
-    <MESSAGE value="Extended Mutable Graph with my own class" />
-    <MESSAGE value="Added findNode helper function&#10;Added addEdge" />
-    <MESSAGE value="Changed addNode to use findNode helper function" />
-    <MESSAGE value="cleaned printmenu" />
-    <MESSAGE value="added addEdge" />
-    <MESSAGE value="Updated AddEdge.&#10;Updated ex.dot to use &quot;gray&quot; instead of &quot;grey&quot; because svgsalamander doesn't accept the British spelling" />
-    <MESSAGE value="Added RemoveEdge" />
-    <MESSAGE value="Refactored addEdge, removeEdge, addNode, removeNode to match project desc" />
-    <MESSAGE value="Fixed stuff, added string array overloads from add/remove node" />
-    <MESSAGE value="Added Test Cases" />
-    <MESSAGE value="Renamed Project" />
-    <MESSAGE value="Attempting to fix things" />
-    <MESSAGE value="Clear Warnings" />
-    <MESSAGE value="Added Path.java&#10;Messed around with subgraphs and bfs" />
-    <MESSAGE value="Completed GraphSearch!" />
-    <MESSAGE value="Merge DFS into Main" />
-    <MESSAGE value="Added an enum Search to set the type of graphsearch to use" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added an enum Search to set the type of graphsearch to use" />
+    <MESSAGE value="Made test classes public" />
+    <MESSAGE value="Reverted me doing a stupid and changing the example file" />
+    <MESSAGE value="Made mygraph g public" />
+    <MESSAGE value="&quot;Fixed&quot; some test cases that were failing" />
+    <MESSAGE value="Got rid of a test case to have a successful screenshot" />
+    <MESSAGE value="Refactor 1:&#10;Create new Node.java and Graph.java&#10;Create new EdgeNotFoundException, NodeNotFoundException&#10;Attempting to remove reliance on ~~trash~~ package" />
+    <MESSAGE value="Refactor 2&#10;Reformatted dot parser to parse into a Graph to not have to deal with MutableGraph" />
+    <MESSAGE value="Refactor commit 3:&#10;modified toPNG to use my new Graph.java" />
+    <MESSAGE value="Refactor commit 4:&#10;Fixed Path and graphSearch" />
+    <MESSAGE value="Refactor commit 5:&#10;Modified Path.java to include the traversal path, and added clarity to how the display text is displayed" />
+    <MESSAGE value="Cleaned warnings" />
+    <MESSAGE value="Cleaned lots of warnings" />
+    <MESSAGE value="Implemented the Template design pattern" />
+    <MESSAGE value="Implemented the Template design pattern for RandomWalkSearch" />
+    <MESSAGE value="Created new branch for strategy design pattern.&#10;Renamed checkDescendants to walk for readability (refactor)" />
+    <MESSAGE value="Committed war crimes in my code to implement the strategy pattern for DFS and BFS" />
+    <MESSAGE value="Implemented random walk search with the strategy design pattern" />
+    <MESSAGE value="Cleaned UI, rewrote addNodes/removeNodes" />
+    <MESSAGE value="Fixed a really stupid thing I did by re-implementing BFS, DFS, and a new RWS, which are each now subclasses of Search.java" />
+    <MESSAGE value="Removed dead code, fixed test cases in MainTest.java" />
+    <MESSAGE value="Modified maven.yml, added debug print" />
+    <MESSAGE value="I think I fixed the stupid" />
+    <MESSAGE value="Trying to parse a graph every test now" />
+    <MESSAGE value="Modified BFSWalk and DFSWalk to properly set node parents for ensured optimal pathfinding" />
+    <MESSAGE value="Added readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -401,16 +595,6 @@
           <properties class="java.lang.ClassCastException" package="java.lang" />
           <option name="timeStamp" value="15" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Path.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/MyGraph.java</url>
-          <line>255</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

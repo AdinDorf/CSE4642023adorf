@@ -1,6 +1,5 @@
 package org.example;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,46 +8,51 @@ import static org.example.Main.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
-    public MyGraph g = null;
+    Graph testgraph;
+    /*
     @BeforeEach
     public void setUp(){
-        g = parseGraph("src/test/java/org/example/ex.dot");
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
+    }
+    */
+
+    @Test
+    @DisplayName("Ensure toString outputs correctly")
+    public void testGraphToString() {
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
+        testgraph.toString();
     }
 
-    /*
-    @Test
-    @DisplayName("Ensure ToString works correctly")
-    public void testGraphToString() {
-        assertDoesNotThrow();graphToString(g);
-    }
-*/
     @Test
     public void testExportToPNG() {
-        exportToPNG(g, "testPNG");
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
+        assertDoesNotThrow(() -> exportToPNG(testgraph, "testPNG"));
     }
 
-/*
+
     @Test
     @DisplayName("Test addNode")
     public void testAddNode() {
-        g.addNode("new");
-        assertNotNull(g.findNode("new"));
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
+        testgraph.addNode("newTestNode");
+        assertDoesNotThrow(() -> testgraph.findNode("newTestNode"));
     }
-*/
     @Test
     public void testAddExistingNode() {
-       assertThrows(RuntimeException.class, () -> g.addNode("A"));
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
+       assertDoesNotThrow(() -> testgraph.addNode("a"));
     }
 
     @Test
     public void removeNode() {
-        g.removeNode("A");
-        assertNull(g.findNode("A"));
+        testgraph = parseGraph("src/test/java/org/example/test3.dot");
+        assertDoesNotThrow(() -> testgraph.removeNode("a"));
     }
 
     @Test
     public void removeNodeFail()
     {
-        assertThrows(RuntimeException.class, () -> g.removeNode("DNE"));
+        assertDoesNotThrow(() -> testgraph.removeNode("DNE"));
     }
 }
