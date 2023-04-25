@@ -6,6 +6,11 @@ import guru.nidi.graphviz.parse.Parser;
 import java.io.*;
 import java.util.Scanner;
 public class Main {
+
+    public enum Algorithm {
+        BFS, DFS, RAND
+    }
+
     public static Graph g = null;
     public static void main(String[] args)  {
 
@@ -162,23 +167,24 @@ public class Main {
 
 
 
-    public static void GraphSearch(String src, String dst, String alg)
+    public static void GraphSearch(String src, String dst, String algName)
     {
-        Path p = new Path();
+        Algorithm alg;
         Search search;
-        if (alg.equals("bfs")) {
-            search = new BFS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
-        } else if (alg.equals("dfs")) {
-            search = new DFS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
-        } else if (alg.equals("rand")){
-            search = new RWS(g.findNode(src), g.findNode(dst), g.nodes, g.edges);
+        if (algName.equals("bfs")) {
+            alg = Algorithm.BFS;
+        } else if (algName.equals("dfs")) {
+            alg = Algorithm.DFS;
+        } else if (algName.equals("rand")){
+            alg = Algorithm.RAND;
         }
         else{
             System.out.println("Please enter a valid algorithm (bfs, dfs, or rand)");
             return;
         }
 
-        p = g.GraphSearch(search);
+        Path p = g.GraphSearch(src, dst, alg);
+
         System.out.println("Path determined by " + alg + ": " + p.toString());
         System.out.println("Order of traversal: " + p.returnTraversal());
     }

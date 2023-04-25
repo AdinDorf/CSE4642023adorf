@@ -7,12 +7,7 @@ import static guru.nidi.graphviz.model.Factory.mutNode;
 public class Graph {
     public ArrayList<Node> nodes;
     public ArrayList<Edge> edges;
-/*
-    public enum Algorithm {
-        dfs,
-        bfs
-    }
-*/
+
     public Graph()
     {
         this(new ArrayList<>(), new ArrayList<>());
@@ -139,8 +134,20 @@ public class Graph {
         throw new EdgeNotFoundException("Edge from " + source + " to " + dest + " not found!");
     }
 
-    public Path GraphSearch(Search search)
+    public Path GraphSearch(String src, String dst, Main.Algorithm alg)
     {
+        Search search;
+        if (alg == Main.Algorithm.BFS) {
+            search = new BFS(findNode(src), findNode(dst), nodes, edges);
+        } else if ((alg == Main.Algorithm.DFS)) {
+            search = new DFS(findNode(src), findNode(dst), nodes, edges);
+        } else if ((alg == Main.Algorithm.RAND)){
+            search = new RWS(findNode(src), findNode(dst), nodes, edges);
+        }
+        else{
+            System.out.println("Something went horribly wrong, this should never be reached.");
+            return null;
+        }
         return search.runSearch();
     }
 

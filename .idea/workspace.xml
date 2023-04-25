@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Modified BFSWalk and DFSWalk to properly set node parents for ensured optimal pathfinding">
+    <list default="true" id="36539bb5-1d06-4a5d-a54d-f99abec3540c" name="Changes" comment="Added readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +86,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\adin\IdeaProjects\CSE464adorf\src" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.example" />
@@ -189,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676583715866</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added tostring">
-      <created>1676674013481</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1676674013481</updated>
     </task>
     <task id="LOCAL-00005" summary="Cleaned up output">
       <created>1676674315294</created>
@@ -533,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682137130022</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Added readme">
+      <created>1682138095961</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1682138095961</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,7 +553,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modied GraphSearch to take an Algorithm as input" />
     <MESSAGE value="Made test classes public" />
     <MESSAGE value="Reverted me doing a stupid and changing the example file" />
     <MESSAGE value="Made mygraph g public" />
@@ -573,7 +577,8 @@
     <MESSAGE value="I think I fixed the stupid" />
     <MESSAGE value="Trying to parse a graph every test now" />
     <MESSAGE value="Modified BFSWalk and DFSWalk to properly set node parents for ensured optimal pathfinding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified BFSWalk and DFSWalk to properly set node parents for ensured optimal pathfinding" />
+    <MESSAGE value="Added readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,11 +595,6 @@
           <properties class="java.lang.ClassCastException" package="java.lang" />
           <option name="timeStamp" value="15" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>167</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
